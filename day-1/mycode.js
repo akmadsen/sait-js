@@ -79,15 +79,25 @@ console.log("Return Value: " + heather);
 // EXAMPLE: Temperature Control 
 console.log("\nEXAMPLE: Control Statements"); 
 
-let temperature = -30; 
+let temperature = -5; 
+let hasCoat = false; 
+let hasHat = false; 
 
 console.log("Temperature:\t" + temperature); 
 if (temperature < -20) { 
     console.log("It is below -20 degrees, stay inside."); 
 } else if (temperature < 0) { 
-    console.log("It is below 0 degrees, put on a coat and a hat"); 
+    if (!(hasCoat && hasHat)) { 
+        console.log("It is below 0, and you're missing a hat or coat - stay inside."); 
+    } else { 
+        console.log("It is below 0 degrees, put on a coat and a hat");
+    }
 } else if (temperature < 10) { 
-    console.log("It is below 10 degrees, put on a coat."); 
+    if(!hasCoat) { 
+        console.log("It is below 10 degrees, but you're missing a coat - stay inside."); 
+    } else { 
+        console.log("It is below 10 degrees, put on a coat."); 
+    }
 } else { 
     console.log("It is 10 degrees or above - wear what you like."); 
 }

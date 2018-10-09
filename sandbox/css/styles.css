@@ -1,0 +1,11 @@
+.box { 
+    background-color: rebeccapurple; 
+    height: 100px; 
+    width: 100px;
+
+    transition: 0.2s;
+}
+
+.rotated { 
+    transform: rotate(60deg); 
+}
