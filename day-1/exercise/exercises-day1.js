@@ -15,7 +15,7 @@ var quote = "A ship in port is safe, but that is not what ships are for. Sail ou
 console.log(quote); 
 
 //Log out the type of the variable. Is it a string? A number? Something else?
-console.log(typeof(quote)); 
+console.log(typeof quote); 
 
 //2. Define a variable `quoteLength` that stores the length of the quote.
 let quoteLength = quote.length; 
