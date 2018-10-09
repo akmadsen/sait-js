@@ -42,13 +42,23 @@ function sumOfNumbers(num1, num2) {
 
 //6. Create a function `sumOfLowNumbers` that takes 5 numbers and returns the sum of all numbers that are less than or equal to 6.
 function sumOfLowNumbers(num1, num2, num3, num4, num5) { 
-    var numArray = [num1, num2, num3, num4, num5]; 
 
     let result = 0; 
-    for(let i = 0; i < numArray.length; i++) {
-        if (numArray[i] <= 6) { 
-            result += numArray[i]; 
-        }
+
+    if (num1 <= 6) { 
+        result += num1; 
+    }
+    if (num2 <= 6) { 
+        result += num2; 
+    }
+    if (num3 <= 6) { 
+        result += num3; 
+    }
+    if (num4 <= 6) { 
+        result += num4; 
+    }
+    if (num5 <= 6) { 
+        result += num5; 
     }
 
     return result; 
