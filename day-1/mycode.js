@@ -5,7 +5,7 @@
 
 // EXAMPLE: Logging
 console.log("EXAMPLE: Logging");
-alert("Gotcha!");
+// alert("Gotcha!"); // Commented Out for Convenience
 console.log("Hey there");
 document.write("1337 haxx0rz"); 
 
@@ -38,3 +38,10 @@ var lastName = "Madsen";
 var fullName = firstName + " " + lastName; 
 console.log("Full Name:", fullName); // Testing comma
 
+// EXAMPLE: Function 
+console.log("\nEXAMPLE: Function"); 
+function myFunction() { 
+    console.log("The Pirate's Code is more like... A guideline than actual rules."); 
+}
+
+myFunction(); 
