@@ -11,7 +11,7 @@ document.write("1337 haxx0rz");
 
 
 // EXAMPLE: Vars 
-console.log("\nEXAMPLE: Vars")
+console.log("\nEXAMPLE: Vars");
 var test = "I am a Variable"; 
 console.log(test); 
 
@@ -19,7 +19,7 @@ console.log(test);
 var num1 = 4; 
 var num2 = 3; 
 
-console.log("\nEXAMPLE: Arithmetic")
+console.log("\nEXAMPLE: Arithmetic");
 console.log("num1: " + num1 + "\t\tnum2: " + num2); 
 console.log("Negation:\t\t" + (-num1)); 
 console.log("Addition:\t\t" + (num1 + num2)); 
@@ -37,3 +37,4 @@ var firstName = "Alexander";
 var lastName = "Madsen"; 
 var fullName = firstName + " " + lastName; 
 console.log("Full Name:", fullName); // Testing comma
+

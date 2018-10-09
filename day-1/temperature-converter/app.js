@@ -14,5 +14,3 @@ let celsiusConversion = convertFahrenheitToCelsius(fahrenheitConversion);
 document.write("<h1>Temperature Converter</h1>"); 
 document.write("<p>" + celsiusBase + "&deg;C is " + fahrenheitConversion + "&deg;F"); 
 document.write("<p>" + fahrenheitConversion + "&deg;F is " + celsiusConversion + "&deg;C"); 
-
-
