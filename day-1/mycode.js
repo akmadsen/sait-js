@@ -40,8 +40,24 @@ console.log("Full Name:", fullName); // Testing comma
 
 // EXAMPLE: Function 
 console.log("\nEXAMPLE: Function"); 
-function myFunction() { 
+function pirateQuote() { 
     console.log("The Pirate's Code is more like... A guideline than actual rules."); 
 }
 
-myFunction(); 
+pirateQuote(); 
+
+// EXAMPLE: Arguments
+console.log("\nEXAMPLE: Arguments"); 
+
+function makeFullName(firstName, lastName) { 
+    return firstName + " " + lastName; 
+}
+
+console.log("Full Name: " + makeFullName("Alex", "Madsen")); 
+
+// EXAMPLE: Return Statements
+console.log("\nEXAMPLE: Return Statements"); 
+
+let heather = makeFullName("Heather", "Tovey"); 
+
+console.log("Return Value: " + heather); 
