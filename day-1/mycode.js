@@ -3,6 +3,7 @@
  */
 
 
+
 // EXAMPLE: Logging
 console.log("EXAMPLE: Logging");
 // alert("Gotcha!"); // Commented Out for Convenience
@@ -10,10 +11,13 @@ console.log("Hey there");
 document.write("1337 haxx0rz"); 
 
 
+
 // EXAMPLE: Vars 
 console.log("\nEXAMPLE: Vars");
 var test = "I am a Variable"; 
 console.log(test); 
+
+
 
 // EXAMPLE: Arithmetic 
 var num1 = 4; 
@@ -31,12 +35,16 @@ console.log("Modulo:\t\t\t" + (num1 % num2));
 console.log("Div by 0:\t\t" + (1 / 0));
 console.log("sqrt -1:\t\t" + Math.sqrt(-1)); 
 
+
+
 // EXAMPLE: Your name 
 console.log("\nEXAMPLE: Concatenation"); 
 var firstName = "Alexander"; 
 var lastName = "Madsen"; 
 var fullName = firstName + " " + lastName; 
 console.log("Full Name:", fullName); // Testing comma
+
+
 
 // EXAMPLE: Function 
 console.log("\nEXAMPLE: Function"); 
@@ -45,6 +53,8 @@ function pirateQuote() {
 }
 
 pirateQuote(); 
+
+
 
 // EXAMPLE: Arguments
 console.log("\nEXAMPLE: Arguments"); 
@@ -55,9 +65,29 @@ function makeFullName(firstName, lastName) {
 
 console.log("Full Name: " + makeFullName("Alex", "Madsen")); 
 
+
+
 // EXAMPLE: Return Statements
 console.log("\nEXAMPLE: Return Statements"); 
 
 let heather = makeFullName("Heather", "Tovey"); 
 
 console.log("Return Value: " + heather); 
+
+
+
+// EXAMPLE: Temperature Control 
+console.log("\nEXAMPLE: Control Statements"); 
+
+let temperature = -30; 
+
+console.log("Temperature:\t" + temperature); 
+if (temperature < -20) { 
+    console.log("It is below -20 degrees, stay inside."); 
+} else if (temperature < 0) { 
+    console.log("It is below 0 degrees, put on a coat and a hat"); 
+} else if (temperature < 10) { 
+    console.log("It is below 10 degrees, put on a coat."); 
+} else { 
+    console.log("It is 10 degrees or above - wear what you like."); 
+}
