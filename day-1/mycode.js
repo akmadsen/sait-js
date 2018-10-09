@@ -1,12 +1,8 @@
-/* 
-    Multiline
-    Comment 
-*/
+/**
+ * Here is my custom JS code.
+ */
 
-// Single Line Comment 
-alert("Hello, world!");
-console.log("Secret message"); // Inline Comment 
-
+// Custom code
 alert("Gotcha!");
 console.log("Hey there");
 document.write("1337 haxx0rz"); 
