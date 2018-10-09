@@ -14,6 +14,6 @@ let tests = [
     [1000, 1000.000001] 
 ]; 
 
-for(let i = 0; i < tests.length; i++) { 
+for(let i = 0; i < tests.length; i++) {
     writeTest(i + 1, tests[i]); 
 }
