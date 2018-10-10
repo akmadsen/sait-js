@@ -90,20 +90,20 @@ console.log(circle);
 //10. Create an array `shapes` that represents a list of shapes. The array should contain the rectangle and the circle objects defined above.
 //console.log the variable. Be sure to inspect it in the developer console!
 
-let shapes = { 
-    rect, 
-    circle 
-}
+let shapes = [rect, circle];
 
 console.log(shapes); 
 
 //11. Add a new object to the `shapes` array representing a right triangle.
 //The triangle should have a `base` of 33 and a `height` of 44.
 //console.log the updated shapes array
-shapes.rightTriangle = { 
+
+let rightTriangle = { 
     base: 33, 
     height: 44
 }
+
+shapes.push(rightTriangle);
 
 console.log(shapes); 
 
@@ -116,5 +116,6 @@ function calculateHypotenuse(rightTriangle) {
     return Math.sqrt(Math.pow(rightTriangle.base, 2) + Math.pow(rightTriangle.height, 2)); 
 }
 
-shapes.rightTriangle.hypotenuse = calculateHypotenuse(shapes.rightTriangle); 
+// MAGIC NUMBER: We know the triangle to be index 2 
+shapes[2].hypotenuse = calculateHypotenuse(shapes[2]); 
 console.log(shapes); 
