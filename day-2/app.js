@@ -161,3 +161,25 @@ for (let i = 0; i < movies.length; i++) {
     let movie = movies[i]; 
     console.log("I give " + movie["movie name"] + " " + movie.rating + " stars."); 
 }
+
+
+
+// EXAMPLE: Objects in Functions 
+console.log("\nEXAMPLE: Objects in Functions"); 
+
+function logTitleAndServings(recipe) { 
+    console.log("Recipe: " + recipe.recipeTitle + "\nServings: " + recipe.servings); 
+}
+
+logTitleAndServings(favouriteRecipe); 
+
+
+
+// EXAMPLE: Functions in Objects (Methods) 
+console.log("\nEXAMPLE: Functions in Objects (Methods)"); 
+
+favouriteRecipe.letsCook = function() {
+    console.log("I'm hungry, let's cook... " + this.recipeTitle); 
+}
+
+favouriteRecipe.letsCook(); 
