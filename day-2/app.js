@@ -111,3 +111,53 @@ console.log("\nEXAMPLE: Food Array Iteration");
 for (let i = 0; i < foodArray.length; i++) { 
     console.log(foodArray[i]); 
 }
+
+
+
+// EXAMPLE: Recipe Object
+console.log("\nEXAMPLE: Favourite Recipe Object");
+let favouriteRecipe = {
+    recipeTitle: "Pepper Chicken", 
+    recipeDescription: "A delectible, juicy chicken breast with chopped peppers, cheese, and ... you guessed it... pepper!",
+    ingredients: ["chicken breast", "bell peppers", "pepper pepper pepper", "olive oil"], 
+    directions: "Slap, chop, cut, fry, eat. Life's good.", 
+    rating: 3.5, 
+    cookTime: 20
+}
+
+console.log(favouriteRecipe); 
+console.log("CURRENT RATING: " + favouriteRecipe.rating); 
+
+
+
+// EXAMPLE: Recipe Object
+console.log("\nEXAMPLE: Object Accessors");
+console.log("Recipe Title: " + favouriteRecipe['recipeTitle']); 
+console.log("Ingredients: " + favouriteRecipe.ingredients); 
+
+
+
+// EXAMPLE: Alter Object
+console.log("\nEXAMPLE: Altering Object");
+
+favouriteRecipe.servings = 2; 
+favouriteRecipe['rating'] = 4.0; 
+delete favouriteRecipe.cookTime; 
+
+console.log(favouriteRecipe); 
+
+
+
+// EXAMPLE: Movie Arrays 
+console.log("\nEXAMPLE: Altering Object"); 
+
+let movies = [ 
+    {"movie name": "Ghost Rider", "rating": -Infinity}, 
+    {"movie name": "Bubba Ho Tep", "rating": 100}, 
+    {"movie name": "Starship Troopers", "rating": 5}
+];
+
+for (let i = 0; i < movies.length; i++) { 
+    let movie = movies[i]; 
+    console.log("I give " + movie["movie name"] + " " + movie.rating + " stars."); 
+}
