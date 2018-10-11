@@ -71,3 +71,13 @@ let footer = document.querySelector('#footer');
 
 header.innerHTML += "<a href=\"#\">Sneaky Sneaky</a>"; 
 footer.innerHTML = "<p>MWA HA HA HA! I AM IN CHARGE NOW!</p>"; 
+
+
+
+console.log("\n\nEXAMPLE: Element Creation");
+let newParagraph = document.createElement('p'); 
+let paragraphText = document.createTextNode("Hello!"); 
+newParagraph.appendChild(paragraphText); 
+
+let main = document.querySelector("#main"); 
+main.appendChild(newParagraph); 
