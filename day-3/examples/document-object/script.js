@@ -42,3 +42,11 @@ console.log(image);
 
 image.setAttribute('src', 'https://placekitten.com/500/600?random'); 
 console.log(image); 
+
+
+console.log("\n\nEXAMPLE: Style");
+let item = document.getElementsByClassName('nav-item')[2]; 
+item.style.color = "red"; 
+item.style.fontWeight = "bold";  
+item.style.border = "2px solid red"; 
+item.style.backgroundColor = "salmon"; 
