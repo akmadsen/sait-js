@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Location Object</h1>
+    <p>Hold "Back" Button to See how HREF and REPLACE affect History</p>
+    <button onclick=locationHref()>Href</button>
+    <button onclick=locationReplace()>Replace</button>
+
+    <script>
+        function locationHref() {
+            location.href = "#top";
+        }
+
+        function locationReplace() {
+            location.replace("#top");
+        }
+    </script>
+</body>
+
+</html>
