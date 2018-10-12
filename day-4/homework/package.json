@@ -1,0 +1,20 @@
+{
+  "name": "quote-machine",
+  "version": "1.0.0",
+  "description": "A quote machine for our SAIT JavaScript class, and my own portfolio",
+  "main": "index.html",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "gulp": "./node_modules/.bin/gulp watch",
+    "style": "./node_modules/.bin/gulp style"
+  },
+  "author": "Alex Madsen",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
+    "gulp-wait": "0.0.2"
+  }
+}
