@@ -26,12 +26,6 @@ clearTimeout(timerId);
 let timeBox = document.getElementById('time'); 
 timeBox.innerHTML = new Date(); 
 
-// timeBox.style.position = "absolute"; 
-// timeBox.style.border = "2px solid black"; 
-// timeBox.style.top = "400px"; 
-// timeBox.style.right = "100px"; 
-// timeBox.style.padding = "10px";
-
 function updateTime() { 
     timeBox.innerHTML = new Date(); 
 }
