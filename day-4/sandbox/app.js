@@ -31,3 +31,25 @@ function updateTime() {
 }
 
 let intervalTimer = setInterval(updateTime, 1000); 
+
+// Button Example
+
+function sayHi(event) { 
+    alert("Hi!"); 
+    console.log(event); 
+
+    let current = event.currentTarget; 
+    current.style.backgroundColor = "darkolivegreen"; 
+    current.innerHTML = "GOTCHA!"; 
+}
+
+// JS Caller Example 
+box.addEventListener('mouseover', sayHi); 
+
+// Prevent Default Example 
+let link = document.getElementById("sait-link"); 
+link.addEventListener("click", function(event) { 
+    event.preventDefault(); 
+    console.log(event); 
+    alert("Gotcha!"); 
+});
