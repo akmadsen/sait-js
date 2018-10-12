@@ -1,0 +1,15 @@
+.hero { 
+    height: $hero-height;
+
+    .container {
+        height: 100%;
+    }
+}
+
+#quote-box { 
+    height: 100%;
+    display: flex; 
+    position: relative;
+    justify-content: center; 
+    align-items: center; 
+}

@@ -9,5 +9,17 @@ h1 {
   text-align: center;
   color: #dda0dd; }
 
+.hero {
+  height: 400px; }
+  .hero .container {
+    height: 100%; }
+
+#quote-box {
+  height: 100%;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center; }
+
 body {
   background-color: #dab2e8; }

@@ -18,7 +18,7 @@ let timeDelay = 3000; // End Result 30 Seconds
 let currentIndex = 0; 
 
 function setQuote(index) { 
-    quoteBox.innerHTML = gibsonQuotes[index]; 
+    quoteBox.innerHTML = "<p>" + gibsonQuotes[index] + "</p>"; 
 }
 
 // Quote Update Functions 
@@ -28,7 +28,7 @@ function updateQuote() {
 }
 
 // Get Quote behaviour running 
-quoteBox.innerHTML = gibsonQuotes[currentIndex]; 
+setQuote(currentIndex); 
 let timerId = setInterval(updateQuote, timeDelay); 
 
 function resetTimer() { 
