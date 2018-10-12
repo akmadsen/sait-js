@@ -1,5 +1,13 @@
 header {
-  background-color: rebeccapurple; }
+  height: 100px;
+  background-color: rebeccapurple;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+h1 {
+  text-align: center;
+  color: #dda0dd; }
 
 body {
   background-color: #dab2e8; }
