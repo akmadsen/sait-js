@@ -20,11 +20,11 @@ function catWalk() {
     currentTop = parseInt(img.style.top); 
     let topBound = window.innerHeight - img.height; 
 
-    if ((currentLeft > leftBound) || (currentLeft < 0)) {
+    if ((currentLeft > leftBound && direction > 0) || (currentLeft < 0 && direction < 0)) {
         direction *= -1;
     }
 
-    if ((currentTop > topBound) || (currentTop < 0)) { 
+    if ((currentTop > topBound && vertDirection > 0) || (currentTop < 0 && vertDirection < 0)) { 
         vertDirection *= -1; 
     }
 
