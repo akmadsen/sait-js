@@ -1,7 +1,8 @@
-header { 
-    background-color: rebeccapurple; 
-}
+// Common Variables and the like 
+@import "base/variables.scss"; 
 
-body { 
-    background-color: #dab2e8;
-}
+// Component Specific Items 
+@import "components/header.scss"; 
+
+// Page Specific Items
+@import "pages/index.scss";
