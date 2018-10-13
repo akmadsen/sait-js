@@ -1,0 +1,23 @@
+main {
+    padding: $standard-padding 0; 
+
+
+    h2, h3 { 
+        text-align: center; 
+        margin-bottom: $standard-margin; 
+    }
+
+    p { 
+        text-align: justify; 
+        margin-bottom: $paragraph-spacing; 
+    }
+
+    a { 
+        color: $text-color;  
+
+        &:hover { 
+            color: $highlight-color; 
+            text-decoration: none;   
+        }
+    }
+}
