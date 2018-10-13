@@ -1,9 +1,6 @@
 header { 
-    height: $header-height; 
+    padding: $standard-padding 0; 
     background-color: $primary-color; 
-    display: flex; 
-    justify-content: center;
-    align-items: center; 
 }
 
 h1 { 
