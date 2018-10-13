@@ -18,53 +18,56 @@ let quotes = [{
     {
         quote: "Things aren't different. Things are things.",
         author: "William Gibson"
-    }, 
-    { 
-        quote: "Do the difficult things while they are easy and do the great things while they are small. A journey of a thousand miles must begin with a single step.", 
-        author: "Laozi"
-    }, 
-    { 
-        quote: "A good traveler has no fixed plans, and is not intent on arriving.", 
-        author: "Laozi"
-    }, 
-    { 
-        quote: "Nature does not hurry, yet everything is accomplished.", 
-        author: "Laozi"
-    }, 
-    { 
-        quote: "If you do not change direction, you may end up where you are heading.", 
-        author: "Laozi"
-    }, 
+    },
     {
-        quote: "Silence is a source of great strength.", 
+        quote: "Do the difficult things while they are easy and do the great things while they are small. A journey of a thousand miles must begin with a single step.",
         author: "Laozi"
-    }, 
-    { 
-        quote: "I may not have gone where I intended to go, but I think I have ended up where I needed to be.", 
+    },
+    {
+        quote: "A good traveler has no fixed plans, and is not intent on arriving.",
+        author: "Laozi"
+    },
+    {
+        quote: "Nature does not hurry, yet everything is accomplished.",
+        author: "Laozi"
+    },
+    {
+        quote: "If you do not change direction, you may end up where you are heading.",
+        author: "Laozi"
+    },
+    {
+        quote: "Silence is a source of great strength.",
+        author: "Laozi"
+    },
+    {
+        quote: "I may not have gone where I intended to go, but I think I have ended up where I needed to be.",
         author: "Douglas Adams"
-    }, 
+    },
     {
-        quote: "Flying is learning how to throw yourself at the ground and miss.", 
+        quote: "Flying is learning how to throw yourself at the ground and miss.",
         author: "Douglas Adams"
-    }, 
+    },
     {
-        quote: "Time is an illusion. Lunchtime doubly so.", 
+        quote: "Time is an illusion. Lunchtime doubly so.",
         author: "Douglas Adams"
-    }, 
+    },
     {
-        quote: "A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.", 
+        quote: "A common mistake that people make when trying to design something completely foolproof is to underestimate the ingenuity of complete fools.",
         author: "Douglas Adams"
-    }, 
+    },
     {
-        quote: "To give real service you must add something which cannot be bought or measured with money, and that is sincerity and integrity.", 
+        quote: "To give real service you must add something which cannot be bought or measured with money, and that is sincerity and integrity.",
         author: "Douglas Adams"
     }
 ];
+
+
 
 // Components to work with 
 let quoteBox = document.getElementById('quote-box');
 let prevButton = document.getElementById('prev-button');
 let nextButton = document.getElementById('next-button');
+
 
 
 // Defined variables and constants
