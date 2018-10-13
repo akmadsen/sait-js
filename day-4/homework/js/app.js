@@ -1,10 +1,25 @@
 // Data to work with 
 let gibsonQuotes = [
-    "The future is here. It's just not widely distributed yet. - William Gibson", 
-    "Time moves in one direction, memory in another. - William Gibson", 
-    "Language is to the mind more than light is to the eye. - William Gibson", 
-    "When you want to know how things really work, study them when they're coming apart. - William Gibson", 
-    "Things aren't different. Things are things. - William Gibson"
+    {
+        quote: "The future is here. It's just not widely distributed yet.", 
+        author: "William Gibson"
+    }, 
+    {
+        quote: "Time moves in one direction, memory in another.",
+        author: "William Gibson"
+    }, 
+    {
+        quote: "Language is to the mind more than light is to the eye.",
+        author: "William Gibson"
+    }, 
+    {
+        quote: "When you want to know how things really work, study them when they're coming apart.", 
+        author: "William Gibson"
+    }, 
+    {
+        quote: "Things aren't different. Things are things.", 
+        author: "William Gibson"
+    }
 ]; 
 
 // Components to work with 
@@ -18,7 +33,7 @@ let timeDelay = 3000; // End Result 30 Seconds
 let currentIndex = 0; 
 
 function setQuote(index) { 
-    quoteBox.innerHTML = "<p>" + gibsonQuotes[index] + "</p>"; 
+    quoteBox.innerHTML = "<p>" + gibsonQuotes[index].quote + " - " + gibsonQuotes[index].author + "</p>"; 
 }
 
 // Quote Update Functions 
