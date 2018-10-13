@@ -7,7 +7,7 @@ header {
 
 h1 {
   text-align: center;
-  color: #dda0dd; }
+  color: #d8aad8; }
 
 .hero {
   height: 400px; }
@@ -17,7 +17,7 @@ h1 {
     position: relative; }
   .hero button {
     background-color: transparent;
-    color: #dda0dd;
+    color: #d8aad8;
     position: absolute;
     top: 50%; }
   .hero #prev-button {
@@ -30,6 +30,26 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+footer {
+  background-color: rebeccapurple;
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  footer .container {
+    display: flex;
+    justify-content: center; }
+  footer a {
+    color: #d8aad8;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center; }
+    footer a i {
+      margin-bottom: 10px; }
+    footer a p {
+      margin: 0; }
+    footer a:hover {
+      color: #ddd4dd;
+      text-decoration: none; }
 
 body {
   background-color: #dab2e8; }
