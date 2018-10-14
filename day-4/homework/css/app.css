@@ -75,10 +75,21 @@ button {
   right: 15px; }
 
 #twitter-button {
+  background-color: #1da1f2;
+  color: white;
   position: absolute;
-  bottom: 0;
-  left: 50%;
-  background-color: red; }
+  left: calc(50% - 50px);
+  bottom: 10px;
+  width: 100px;
+  height: 42px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: "Fauna One", serif;
+  border: none;
+  border-radius: 10px; }
+  #twitter-button:focus {
+    outline: none; }
 
 header {
   padding: 30px 0;
