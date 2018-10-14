@@ -1,0 +1,15 @@
+button {
+    background-color: transparent;
+    color: $accent-color;
+    position: absolute;
+    top: 50%;
+    z-index: 20; 
+}
+
+#prev-button {
+    left: 0;
+}
+
+#next-button {
+    right: 0;
+}

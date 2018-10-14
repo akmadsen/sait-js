@@ -1,9 +1,11 @@
 // Common Variables and the like 
 @import "base/variables.scss"; 
 
+
 // Component / Section Specific Items 
 @import "components/quote-container.scss"; 
 @import "components/quote-cards.scss"; 
+@import "components/buttons.scss"; 
 
 @import "components/header.scss"; 
 @import "components/hero.scss"; 
