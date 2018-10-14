@@ -125,8 +125,8 @@ function setQuote(card, index) {
 }
 
 function releaseAnimationLock(event) { 
-    console.log(event.target); 
-    isAnimating = false; 
+    // Release lock 
+    isAnimating = false;
 
     // Cleanup 
     event.target.removeEventListener('transitionend', releaseAnimationLock); 
@@ -201,7 +201,7 @@ function updateQuote(direction) {
         return; 
     }
 
-    if (direction > 0) { 
+    if (direction < 0) { 
         shiftRight(); 
     } else { 
         shiftLeft(); 
@@ -213,27 +213,22 @@ function resetTimer() {
     timerID = setInterval(updateQuote, TIME_DELAY);
 }
 
-function nextQuote(event) {
-
+function pushButton(dir) { 
     if (isAnimating) { 
         return; 
     }
 
-    updateQuote(1); 
-    resetTimer();
+    updateQuote(dir); 
+    resetTimer(); 
+}
+
+function nextQuote(event) {
+    pushButton(1); 
 }
 
 function prevQuote(event) {
-
-    if (isAnimating) { 
-        return; 
-    }
-
-    updateQuote(-1); 
-    resetTimer();
+    pushButton(-1); 
 }
-
-
 
 // Interactivity Hookups 
 PREV_BUTTON.addEventListener('click', prevQuote);
@@ -242,8 +237,6 @@ NEXT_BUTTON.addEventListener('click', nextQuote);
 
 // Initialization Code 
 function initialize() { 
-    console.log("INITIALIZED"); 
-    BODY.style.backgroundColor = "red"; 
 
     // Get Quote behaviour running 
     quoteCenter = makeQuoteCard(0, CENTER_POS_CLASS); 
