@@ -1,0 +1,26 @@
+main {
+    padding: $standard-padding 0; 
+
+
+    h2, h3 { 
+        text-align: center; 
+        margin-bottom: $standard-margin; 
+        font-family: $header-font; 
+    }
+
+    p { 
+        text-align: justify; 
+        margin-bottom: $paragraph-spacing; 
+        font-family: $body-font; 
+    }
+
+    a { 
+        color: $secondary-color;  
+        font-family: $body-font; 
+
+        &:hover { 
+            color: $highlight-color; 
+            text-decoration: none;   
+        }
+    }
+}

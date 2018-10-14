@@ -1,0 +1,32 @@
+footer {
+    background-color: $secondary-color;
+
+    padding: $standard-padding 0; 
+
+    .container {
+        display: flex;
+        justify-content: center;
+    }
+
+    a {
+        color: $highlight-color;
+
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+
+        i {
+            margin-bottom: $paragraph-spacing;
+        }
+
+        p {
+            margin: 0;
+            font-family: $body-font; 
+        }
+
+        &:hover {
+            color: $background-color;
+            text-decoration: none;
+        }
+    }
+}

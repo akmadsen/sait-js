@@ -1,0 +1,11 @@
+header { 
+    padding: $standard-padding 0; 
+    background-color: $secondary-color; 
+    z-index: 100; 
+}
+
+h1 { 
+    text-align: center; 
+    color: $primary-color; 
+    font-family: $header-font; 
+}
