@@ -6,6 +6,9 @@ $accent-color: rgba(2, 123, 206, 1);
 $highlight-color: rgba(70, 73, 76, 1);
 $text-color: rgba(10, 9, 8, 1); 
 
+$arrow-color: rgba(70, 73, 76, 1);
+$arrow-hover-color: rgb(110, 110, 110);
+
 // Padding Values 
 $standard-padding: 30px; 
 $standard-margin: 30px; 
@@ -17,6 +20,7 @@ $hero-height: 400px;
 
 // Transition Values 
 $transition-time: 1s; 
+$fast-transition: 0.2s; 
 
 // Fonts 
 $header-font: 'Playfair Display', serif;

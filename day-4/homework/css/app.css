@@ -33,23 +33,31 @@
   left: -100%; }
 
 button {
-  background-color: transparent;
-  color: #027bce;
-  border: none;
-  border-radius: 50px;
-  padding: 0;
-  position: absolute;
   z-index: 20; }
 
+#prev-button, #next-button {
+  background-color: transparent;
+  color: #46494c;
+  padding: 0;
+  border: none;
+  border-radius: 64px;
+  position: absolute;
+  top: calc(50% - 24px);
+  transition: 0.2s; }
+  #prev-button:hover, #next-button:hover {
+    color: #6e6e6e;
+    transform: scale(1.1); }
+  #prev-button:focus, #next-button:focus {
+    outline: none; }
+
 #prev-button {
-  top: 50%;
-  left: 0; }
+  left: 15px; }
 
 #next-button {
-  top: 50%;
-  right: 0; }
+  right: 15px; }
 
 #twitter-button {
+  position: absolute;
   bottom: 0;
   left: 50%;
   background-color: red; }
