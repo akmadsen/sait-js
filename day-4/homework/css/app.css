@@ -56,12 +56,13 @@ button {
 
 header {
   padding: 30px 0;
-  background-color: #0d2149;
+  background-color: #027bce;
   z-index: 100; }
 
 h1 {
   text-align: center;
-  color: #027bce; }
+  color: #0d2149;
+  font-family: "Playfair Display", serif; }
 
 .hero {
   height: 400px;
@@ -102,4 +103,4 @@ footer {
       text-decoration: none; }
 
 body {
-  background-color: #027bce; }
+  background-color: #f2f4f3; }
