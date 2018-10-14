@@ -75,32 +75,50 @@ let quoteBox = document.getElementById('quote-box'); // TODO: Split this to Quot
 let prevButton = document.getElementById('prev-button');
 let nextButton = document.getElementById('next-button');
 
+let quoteCard; 
+let timerID; 
 
+// Function Definitions
 
-// Function Definitions 
-function setQuote(index) {
-    quoteBox.innerHTML = "<p>" + quotes[index].quote + " - " + quotes[index].author + "</p>";
+// Book-Keeping Functions 
+function nextIndex(index) { 
+    return (index + 1) % quotes.length; 
+}
+
+function prevIndex(index) { 
+    return (index - 1) >= 0 ? index - 1 : quotes.length - 1; 
+}
+
+// Makes a Quote Card 
+function makeQuoteCard(index) { 
+    let card = document.createElement('div'); 
+}
+
+function setQuote(card, index) {
+    card.innerHTML = "<p>" + quotes[index].quote + " - " + quotes[index].author + "</p>";
 }
 
 function updateQuote() {
-    currentIndex = (currentIndex + 1) % quotes.length;
-    setQuote(currentIndex);
+    currentIndex = nextIndex(currentIndex);
+    setQuote(quoteBox, currentIndex);
 }
 
 function resetTimer() {
-    clearInterval(timerId);
-    timerId = setInterval(updateQuote, timeDelay);
+    clearInterval(timerID);
+    timerID = setInterval(updateQuote, timeDelay);
 }
 
 function nextQuote(event) {
-    currentIndex = (currentIndex + 1) % quotes.length;
-    setQuote(currentIndex);
+    currentIndex = nextIndex(currentIndex);
+
+    setQuote(quoteBox, currentIndex);
     resetTimer();
 }
 
 function prevQuote(event) {
-    currentIndex = (currentIndex - 1) >= 0 ? currentIndex - 1 : quotes.length - 1;
-    setQuote(currentIndex);
+    currentIndex = prevIndex(currentIndex);
+
+    setQuote(quoteBox, currentIndex);
     resetTimer();
 }
 
@@ -118,8 +136,8 @@ function initialize() {
     body.style.backgroundColor = "red"; 
 
     // Get Quote behaviour running 
-    setQuote(currentIndex);
-    let timerId = setInterval(updateQuote, timeDelay);
+    setQuote(quoteBox, currentIndex);
+    timerID = setInterval(updateQuote, timeDelay);
 }
 
 body.onload = initialize; 
