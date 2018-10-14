@@ -1,4 +1,4 @@
-// Data to work with 
+// Quote Data
 let quotes = [{
         quote: "The future is here. It's just not widely distributed yet.",
         author: "William Gibson"
@@ -63,30 +63,29 @@ let quotes = [{
 
 
 
+// Defined variables and constants
+let timeDelay = 3000; // End Result 30 Seconds 
+let currentIndex = 0;
+
+
+
 // Components to work with 
-let quoteBox = document.getElementById('quote-box');
+let body = document.getElementsByTagName('body')[0]; 
+let quoteBox = document.getElementById('quote-box'); // TODO: Split this to Quotes L/C/R
 let prevButton = document.getElementById('prev-button');
 let nextButton = document.getElementById('next-button');
 
 
 
-// Defined variables and constants
-let timeDelay = 3000; // End Result 30 Seconds 
-let currentIndex = 0;
-
+// Function Definitions 
 function setQuote(index) {
     quoteBox.innerHTML = "<p>" + quotes[index].quote + " - " + quotes[index].author + "</p>";
 }
 
-// Quote Update Functions 
 function updateQuote() {
     currentIndex = (currentIndex + 1) % quotes.length;
     setQuote(currentIndex);
 }
-
-// Get Quote behaviour running 
-setQuote(currentIndex);
-let timerId = setInterval(updateQuote, timeDelay);
 
 function resetTimer() {
     clearInterval(timerId);
@@ -105,6 +104,22 @@ function prevQuote(event) {
     resetTimer();
 }
 
-// Initialize Buttons 
+
+
+// Interactivity Hookups 
 prevButton.addEventListener('click', prevQuote);
 nextButton.addEventListener('click', nextQuote);
+
+
+
+// Initialization Code 
+function initialize() { 
+    console.log("INITIALIZED"); 
+    body.style.backgroundColor = "red"; 
+
+    // Get Quote behaviour running 
+    setQuote(currentIndex);
+    let timerId = setInterval(updateQuote, timeDelay);
+}
+
+body.onload = initialize; 
