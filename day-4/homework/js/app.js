@@ -72,15 +72,18 @@ const LEFT_ID = "quote-card-left";
 const RIGHT_ID = "quote-card-right"; 
 
 const CARD_CLASS = "quote-card"; 
-const QUOTE_CONTAINER_CLASS = "quote-container"; 
-// Components to work with 
-let body = document.getElementsByTagName('body')[0]; 
-let quoteBox = document.getElementById('quote-box'); // TODO: Split this to Quotes L/C/R
-let prevButton = document.getElementById('prev-button');
-let nextButton = document.getElementById('next-button');
+const QUOTE_CONTAINER_ID = "quote-container"; 
 
-let quoteCard; 
+// Components to work with 
+const BODY = document.getElementsByTagName('body')[0]; 
+const QUOTE_CONTAINER = document.getElementById(QUOTE_CONTAINER_ID); 
+const PREV_BUTTON = document.getElementById('prev-button');
+const NEXT_BUTTON = document.getElementById('next-button');
+
+let quoteCenter, quoteLeft, quoteRight; 
 let timerID; 
+
+
 
 // Function Definitions
 
@@ -106,7 +109,7 @@ function makeQuoteCard(index, id) {
 }
 
 function setQuote(card, index) {
-    let html = "<div class=\"" + QUOTE_CONTAINER_CLASS + "\">";
+    let html = "<div class=\"" + QUOTE_CONTAINER_ID + "\">";
     html += "<i class=\"fas fa-quote-left\"></i>"; 
     html += "<span class=\"quote\">" + quotes[index].quote + "</span>"; 
     html += "<i class=\"fas fa-quote-right\"></i>"; 
@@ -119,7 +122,7 @@ function setQuote(card, index) {
 
 function updateQuote() {
     currentIndex = nextIndex(currentIndex);
-    setQuote(quoteBox, currentIndex);
+    setQuote(quoteCenter, currentIndex);
 }
 
 function resetTimer() {
@@ -130,36 +133,39 @@ function resetTimer() {
 function nextQuote(event) {
     currentIndex = nextIndex(currentIndex);
 
-    setQuote(quoteBox, currentIndex);
+    setQuote(quoteCenter, currentIndex);
     resetTimer();
 }
 
 function prevQuote(event) {
     currentIndex = prevIndex(currentIndex);
 
-    setQuote(quoteBox, currentIndex);
+    setQuote(quoteCenter, currentIndex);
     resetTimer();
 }
 
 
 
 // Interactivity Hookups 
-prevButton.addEventListener('click', prevQuote);
-nextButton.addEventListener('click', nextQuote);
+PREV_BUTTON.addEventListener('click', prevQuote);
+NEXT_BUTTON.addEventListener('click', nextQuote);
 
 
 
 // Initialization Code 
 function initialize() { 
     console.log("INITIALIZED"); 
-    body.style.backgroundColor = "red"; 
+    BODY.style.backgroundColor = "red"; 
 
     // Get Quote behaviour running 
-    setQuote(quoteBox, currentIndex);
+
+    // setQuote(quoteBox, currentIndex);
+    quoteCenter = makeQuoteCard(0, CENTER_ID); 
+    QUOTE_CONTAINER.appendChild(quoteCenter); 
     timerID = setInterval(updateQuote, TIME_DELAY);
 }
 
-body.onload = initialize; 
+BODY.onload = initialize; 
 
 
 // DEBUG
