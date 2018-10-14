@@ -1,6 +1,29 @@
 .quote-card {
     height: 100%;
+    width: 100%; 
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: $transition-time; 
+}
+
+#quote-card-center { 
+    background-color: aqua; 
+    position: absolute;
+    top: 0; 
+    left: 0; 
+}
+
+#quote-card-right { 
+    background-color: yellowgreen; 
+    position: absolute; 
+    top: 0; 
+    left: 100%; 
+}
+
+#quote-card-left { 
+    background-color: papayawhip; 
+    position: absolute;
+    top: 0; 
+    left: -100%;
 }

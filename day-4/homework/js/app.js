@@ -110,17 +110,31 @@ function makeQuoteCard(index, id) {
 
 function setQuote(card, index) {
     let html = ""; 
-    html += "<i class=\"fas fa-quote-left\"></i>"; 
-    html += "<span class=\"quote\">" + quotes[index].quote + "</span>"; 
-    html += "<i class=\"fas fa-quote-right\"></i>"; 
-    html += "<br />"; 
+
+    html += "<span class=\"quote\">"
+    html += "<i class=\"fas fa-quote-left left-quote\"></i>"; 
+    html += quotes[index].quote; 
+    html += "<i class=\"fas fa-quote-right right-quote\"></i>"; 
+    html += "</span>"; 
     html += "<span class=\"author\">" + quotes[index].author + "</span>"; 
 
     card.innerHTML = html; 
 }
 
-function updateQuote() {
-    currentIndex = nextIndex(currentIndex);
+// Direction should be 1 or -1
+function updateQuote(direction) {
+
+    // Guard against invalid input 
+    if (!(direction === 1 || direction === -1)) { 
+        return; 
+    }
+
+    if (direction > 0) { 
+        currentIndex = nextIndex(currentIndex);
+    } else { 
+        currentIndex = prevIndex(currentIndex); 
+    }
+
     setQuote(quoteCenter, currentIndex);
 }
 
@@ -130,16 +144,12 @@ function resetTimer() {
 }
 
 function nextQuote(event) {
-    currentIndex = nextIndex(currentIndex);
-
-    setQuote(quoteCenter, currentIndex);
+    updateQuote(1); 
     resetTimer();
 }
 
 function prevQuote(event) {
-    currentIndex = prevIndex(currentIndex);
-
-    setQuote(quoteCenter, currentIndex);
+    updateQuote(-1); 
     resetTimer();
 }
 
@@ -157,10 +167,14 @@ function initialize() {
     BODY.style.backgroundColor = "red"; 
 
     // Get Quote behaviour running 
-
-    // setQuote(quoteBox, currentIndex);
     quoteCenter = makeQuoteCard(0, CENTER_ID); 
+    quoteLeft = makeQuoteCard(quotes.length - 1, LEFT_ID); 
+    quoteRight = makeQuoteCard(1, RIGHT_ID); 
+    
     QUOTE_CONTAINER.appendChild(quoteCenter); 
+    QUOTE_CONTAINER.appendChild(quoteLeft); 
+    QUOTE_CONTAINER.appendChild(quoteRight); 
+    
     timerID = setInterval(updateQuote, TIME_DELAY);
 }
 

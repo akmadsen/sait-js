@@ -1,12 +1,6 @@
 .hero {
     height: $hero-height;
 
-    .container {
-        height: 100%;
-        background-color: $secondary-color;
-        position: relative;
-    }
-
     button {
         background-color: transparent;
         color: $accent-color;
