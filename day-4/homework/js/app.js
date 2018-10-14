@@ -124,6 +124,11 @@ function setQuote(card, index) {
 // Direction should be 1 or -1
 function updateQuote(direction) {
 
+    // If we haven't passed an argument, assume "next"; 
+    if (direction === undefined) { 
+        direction = 1; 
+    }
+
     // Guard against invalid input 
     if (!(direction === 1 || direction === -1)) { 
         return; 
@@ -179,7 +184,3 @@ function initialize() {
 }
 
 BODY.onload = initialize; 
-
-
-// DEBUG
-// console.log(makeQuoteCard(0, CENTER_ID)); 
