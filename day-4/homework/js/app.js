@@ -64,7 +64,7 @@ let quotes = [{
 
 
 // Defined variables and constants
-const TIME_DELAY = 3000; // End Result 30 Seconds 
+const TIME_DELAY = 5000; // End Result 30 Seconds 
 
 const CENTER_POS_CLASS = "quote-card-center"; 
 const LEFT_POS_CLASS = "quote-card-left"; 
@@ -79,7 +79,7 @@ const BODY = document.getElementsByTagName('body')[0];
 const QUOTE_CONTAINER = document.getElementById(QUOTE_CONTAINER_ID); 
 const PREV_BUTTON = document.getElementById('prev-button');
 const NEXT_BUTTON = document.getElementById('next-button');
-
+const TWITTER_BUTTON = document.getElementById('twitter-button'); 
 
 let quoteCenter, quoteLeft, quoteRight; 
 let timerID; 
@@ -230,10 +230,14 @@ function prevQuote(event) {
     pushButton(-1); 
 }
 
+function tweetCurrentQuote(event) { 
+    console.log("TODO: Tweet Current Quote"); 
+}
+
 // Interactivity Hookups 
 PREV_BUTTON.addEventListener('click', prevQuote);
 NEXT_BUTTON.addEventListener('click', nextQuote);
-
+TWITTER_BUTTON.addEventListener('click', tweetCurrentQuote); 
 
 // Initialization Code 
 function initialize() { 
