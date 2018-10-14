@@ -1,7 +1,7 @@
 footer {
-    background-color: $primary-color;
-    padding-top: $standard-padding;
-    padding-bottom: $standard-padding;
+    background-color: $secondary-color;
+
+    padding: $standard-padding 0; 
 
     .container {
         display: flex;
@@ -9,7 +9,7 @@ footer {
     }
 
     a {
-        color: $accent-color;
+        color: $highlight-color;
 
         display: inline-flex;
         flex-direction: column;
@@ -21,10 +21,11 @@ footer {
 
         p {
             margin: 0;
+            font-family: $body-font; 
         }
 
         &:hover {
-            color: $highlight-color;
+            color: $background-color;
             text-decoration: none;
         }
     }

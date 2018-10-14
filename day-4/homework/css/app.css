@@ -86,23 +86,23 @@ main {
       text-decoration: none; }
 
 footer {
-  background-color: #0d2149;
-  padding-top: 30px;
-  padding-bottom: 30px; }
+  background-color: #027bce;
+  padding: 30px 0; }
   footer .container {
     display: flex;
     justify-content: center; }
   footer a {
-    color: #027bce;
+    color: #46494c;
     display: inline-flex;
     flex-direction: column;
     align-items: center; }
     footer a i {
       margin-bottom: 10px; }
     footer a p {
-      margin: 0; }
+      margin: 0;
+      font-family: "Fauna One", serif; }
     footer a:hover {
-      color: #46494c;
+      color: #f2f4f3;
       text-decoration: none; }
 
 body {
