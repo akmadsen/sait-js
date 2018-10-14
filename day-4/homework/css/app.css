@@ -9,28 +9,46 @@
   height: 100%;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   transition: 1s;
   z-index: 10; }
 
 .quote-card-center {
-  background-color: aqua;
+  background-color: transparent;
   position: absolute;
   top: 0;
   left: 0; }
 
 .quote-card-right {
-  background-color: yellowgreen;
+  background-color: transparent;
   position: absolute;
   top: 0;
   left: 100%; }
 
 .quote-card-left {
-  background-color: papayawhip;
+  background-color: transparent;
   position: absolute;
   top: 0;
   left: -100%; }
+
+.quote {
+  max-width: 80%;
+  margin-bottom: 30px;
+  color: #f2f4f3;
+  font-family: "Fauna One", serif;
+  font-style: italic;
+  font-size: 1.8em;
+  text-align: center; }
+
+.author {
+  max-width: 60%;
+  color: #f2f4f3;
+  font-family: "Playfair Display", serif;
+  font-size: 1.4em;
+  text-align: center;
+  font-weight: bold; }
 
 button {
   z-index: 20; }
