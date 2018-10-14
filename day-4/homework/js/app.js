@@ -119,7 +119,7 @@ function setQuote(card, index) {
     html += quotes[index].quote; 
     html += "<i class=\"fas fa-quote-right right-quote\"></i>"; 
     html += "</span>"; 
-    html += "<span class=\"author\">" + quotes[index].author + "</span>"; 
+    html += "<span class=\"author\">~ " + quotes[index].author + "</span>"; 
 
     card.innerHTML = html; 
 }
