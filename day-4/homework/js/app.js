@@ -231,10 +231,8 @@ function prevQuote(event) {
 }
 
 function tweetCurrentQuote(event) { 
-    console.log("TODO: Tweet Current Quote"); 
     let text = quotes[currentIndex].quote + " - " + quotes[currentIndex].author; 
     let URI = "https://twitter.com/intent/tweet?text=" + encodeURI(text); 
-    // window.open("https://twitter.com/intent/tweet?text=" + encodeURI(text)); 
     window.open (URI, "Tweet That Quote","menubar=1,resizable=1,width=550,height=420,top=500,left=500");
 }
 
