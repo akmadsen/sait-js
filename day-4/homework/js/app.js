@@ -109,13 +109,12 @@ function makeQuoteCard(index, id) {
 }
 
 function setQuote(card, index) {
-    let html = "<div class=\"" + QUOTE_CONTAINER_ID + "\">";
+    let html = ""; 
     html += "<i class=\"fas fa-quote-left\"></i>"; 
     html += "<span class=\"quote\">" + quotes[index].quote + "</span>"; 
     html += "<i class=\"fas fa-quote-right\"></i>"; 
     html += "<br />"; 
     html += "<span class=\"author\">" + quotes[index].author + "</span>"; 
-    html += "</div>"; 
 
     card.innerHTML = html; 
 }
