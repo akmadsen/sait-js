@@ -64,11 +64,15 @@ let quotes = [{
 
 
 // Defined variables and constants
-let timeDelay = 3000; // End Result 30 Seconds 
+const TIME_DELAY = 3000; // End Result 30 Seconds 
 let currentIndex = 0;
 
+const CENTER_ID = "quote-card-center"; 
+const LEFT_ID = "quote-card-left"; 
+const RIGHT_ID = "quote-card-right"; 
 
-
+const CARD_CLASS = "quote-card"; 
+const QUOTE_CONTAINER_CLASS = "quote-container"; 
 // Components to work with 
 let body = document.getElementsByTagName('body')[0]; 
 let quoteBox = document.getElementById('quote-box'); // TODO: Split this to Quotes L/C/R
@@ -90,12 +94,27 @@ function prevIndex(index) {
 }
 
 // Makes a Quote Card 
-function makeQuoteCard(index) { 
+function makeQuoteCard(index, id) { 
     let card = document.createElement('div'); 
+
+    card.id = id; 
+    card.classList.add(CARD_CLASS); 
+
+    setQuote(card, index); 
+
+    return card; 
 }
 
 function setQuote(card, index) {
-    card.innerHTML = "<p>" + quotes[index].quote + " - " + quotes[index].author + "</p>";
+    let html = "<div class=\"" + QUOTE_CONTAINER_CLASS + "\">";
+    html += "<i class=\"fas fa-quote-left\"></i>"; 
+    html += "<span class=\"quote\">" + quotes[index].quote + "</span>"; 
+    html += "<i class=\"fas fa-quote-right\"></i>"; 
+    html += "<br />"; 
+    html += "<span class=\"author\">" + quotes[index].author + "</span>"; 
+    html += "</div>"; 
+
+    card.innerHTML = html; 
 }
 
 function updateQuote() {
@@ -105,7 +124,7 @@ function updateQuote() {
 
 function resetTimer() {
     clearInterval(timerID);
-    timerID = setInterval(updateQuote, timeDelay);
+    timerID = setInterval(updateQuote, TIME_DELAY);
 }
 
 function nextQuote(event) {
@@ -137,7 +156,11 @@ function initialize() {
 
     // Get Quote behaviour running 
     setQuote(quoteBox, currentIndex);
-    timerID = setInterval(updateQuote, timeDelay);
+    timerID = setInterval(updateQuote, TIME_DELAY);
 }
 
 body.onload = initialize; 
+
+
+// DEBUG
+// console.log(makeQuoteCard(0, CENTER_ID)); 
