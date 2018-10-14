@@ -65,14 +65,14 @@ let quotes = [{
 
 // Defined variables and constants
 const TIME_DELAY = 3000; // End Result 30 Seconds 
-let currentIndex = 0;
 
-const CENTER_ID = "quote-card-center"; 
-const LEFT_ID = "quote-card-left"; 
-const RIGHT_ID = "quote-card-right"; 
+const CENTER_POS_CLASS = "quote-card-center"; 
+const LEFT_POS_CLASS = "quote-card-left"; 
+const RIGHT_POS_CLASS = "quote-card-right"; 
 
 const CARD_CLASS = "quote-card"; 
 const QUOTE_CONTAINER_ID = "quote-container"; 
+
 
 // Components to work with 
 const BODY = document.getElementsByTagName('body')[0]; 
@@ -80,9 +80,12 @@ const QUOTE_CONTAINER = document.getElementById(QUOTE_CONTAINER_ID);
 const PREV_BUTTON = document.getElementById('prev-button');
 const NEXT_BUTTON = document.getElementById('next-button');
 
+
 let quoteCenter, quoteLeft, quoteRight; 
 let timerID; 
 
+let currentIndex = 0;
+let isAnimating = false; 
 
 
 // Function Definitions
@@ -97,11 +100,11 @@ function prevIndex(index) {
 }
 
 // Makes a Quote Card 
-function makeQuoteCard(index, id) { 
+function makeQuoteCard(index, posistionClass) { 
     let card = document.createElement('div'); 
 
-    card.id = id; 
     card.classList.add(CARD_CLASS); 
+    card.classList.add(posistionClass); 
 
     setQuote(card, index); 
 
@@ -121,6 +124,70 @@ function setQuote(card, index) {
     card.innerHTML = html; 
 }
 
+function releaseAnimationLock(event) { 
+    console.log(event.target); 
+    isAnimating = false; 
+
+    // Cleanup 
+    event.target.removeEventListener('transitionend', releaseAnimationLock); 
+}
+
+function shiftLeft() { 
+    currentIndex = nextIndex(currentIndex);
+
+    // Lock until animation done 
+    isAnimating = true; 
+
+    // Remove the previous item from the DOM 
+    QUOTE_CONTAINER.removeChild(quoteLeft); 
+
+    // Update References 
+    quoteLeft = quoteCenter; 
+    quoteCenter = quoteRight; 
+    quoteRight = makeQuoteCard(nextIndex(currentIndex), RIGHT_POS_CLASS); 
+
+    // Append new card to card container 
+    QUOTE_CONTAINER.appendChild(quoteRight); 
+
+    // Set event to release lock when transition is done 
+    quoteCenter.addEventListener('transitionend', releaseAnimationLock); 
+    
+    // Shuffle classes around 
+    quoteLeft.classList.remove(CENTER_POS_CLASS); 
+    quoteLeft.classList.add(LEFT_POS_CLASS);
+    
+    quoteCenter.classList.remove(RIGHT_POS_CLASS); 
+    quoteCenter.classList.add(CENTER_POS_CLASS); 
+}
+
+function shiftRight() { 
+    currentIndex = prevIndex(currentIndex);
+
+    // Lock until animation done 
+    isAnimating = true; 
+
+    // Remove the previous item from the DOM 
+    QUOTE_CONTAINER.removeChild(quoteRight); 
+
+    // Update References 
+    quoteRight = quoteCenter; 
+    quoteCenter = quoteLeft; 
+    quoteLeft = makeQuoteCard(prevIndex(currentIndex), LEFT_POS_CLASS); 
+
+    // Append new card to card container 
+    QUOTE_CONTAINER.appendChild(quoteLeft); 
+
+    // Set event to release lock when transition is done 
+    quoteCenter.addEventListener('transitionend', releaseAnimationLock); 
+    
+    // Shuffle classes around 
+    quoteRight.classList.remove(CENTER_POS_CLASS); 
+    quoteRight.classList.add(RIGHT_POS_CLASS);
+    
+    quoteCenter.classList.remove(LEFT_POS_CLASS); 
+    quoteCenter.classList.add(CENTER_POS_CLASS); 
+}
+
 // Direction should be 1 or -1
 function updateQuote(direction) {
 
@@ -135,12 +202,10 @@ function updateQuote(direction) {
     }
 
     if (direction > 0) { 
-        currentIndex = nextIndex(currentIndex);
+        shiftRight(); 
     } else { 
-        currentIndex = prevIndex(currentIndex); 
+        shiftLeft(); 
     }
-
-    setQuote(quoteCenter, currentIndex);
 }
 
 function resetTimer() {
@@ -149,11 +214,21 @@ function resetTimer() {
 }
 
 function nextQuote(event) {
+
+    if (isAnimating) { 
+        return; 
+    }
+
     updateQuote(1); 
     resetTimer();
 }
 
 function prevQuote(event) {
+
+    if (isAnimating) { 
+        return; 
+    }
+
     updateQuote(-1); 
     resetTimer();
 }
@@ -165,16 +240,15 @@ PREV_BUTTON.addEventListener('click', prevQuote);
 NEXT_BUTTON.addEventListener('click', nextQuote);
 
 
-
 // Initialization Code 
 function initialize() { 
     console.log("INITIALIZED"); 
     BODY.style.backgroundColor = "red"; 
 
     // Get Quote behaviour running 
-    quoteCenter = makeQuoteCard(0, CENTER_ID); 
-    quoteLeft = makeQuoteCard(quotes.length - 1, LEFT_ID); 
-    quoteRight = makeQuoteCard(1, RIGHT_ID); 
+    quoteCenter = makeQuoteCard(0, CENTER_POS_CLASS); 
+    quoteLeft = makeQuoteCard(quotes.length - 1, LEFT_POS_CLASS); 
+    quoteRight = makeQuoteCard(1, RIGHT_POS_CLASS); 
     
     QUOTE_CONTAINER.appendChild(quoteCenter); 
     QUOTE_CONTAINER.appendChild(quoteLeft); 

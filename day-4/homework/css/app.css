@@ -10,22 +10,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: 0.2s;
+  transition: 1s;
   z-index: 10; }
 
-#quote-card-center {
+.quote-card-center {
   background-color: aqua;
   position: absolute;
   top: 0;
   left: 0; }
 
-#quote-card-right {
+.quote-card-right {
   background-color: yellowgreen;
   position: absolute;
   top: 0;
   left: 100%; }
 
-#quote-card-left {
+.quote-card-left {
   background-color: papayawhip;
   position: absolute;
   top: 0;
