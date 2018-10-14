@@ -1,9 +1,10 @@
 // Colour Scheme
-$primary-color: rebeccapurple; 
-$secondary-color: #dab2e8; 
-$accent-color: #d8aad8;
-$highlight-color: #ddd4dd;
-$text-color: black; 
+$primary-color: rgba(13, 33, 73, 1); 
+$secondary-color: rgba(2, 123, 206, 1); 
+$background-color: rgba(242, 244, 243, 1); 
+$accent-color: rgba(2, 123, 206, 1);
+$highlight-color: rgba(70, 73, 76, 1);
+$text-color: rgba(10, 9, 8, 1); 
 
 // Padding Values 
 $standard-padding: 30px; 
@@ -16,3 +17,7 @@ $hero-height: 400px;
 
 // Transition Values 
 $transition-time: 1s; 
+
+// Fonts 
+$header-font: 'Playfair Display', serif;
+$body-font: 'Fauna One', serif;

@@ -1,6 +1,6 @@
 #quote-container {
   height: 100%;
-  background-color: #dab2e8;
+  background-color: #027bce;
   padding: 0;
   position: relative;
   overflow-x: hidden; }
@@ -34,7 +34,7 @@
 
 button {
   background-color: transparent;
-  color: #d8aad8;
+  color: #027bce;
   border: none;
   border-radius: 50px;
   padding: 0;
@@ -56,12 +56,12 @@ button {
 
 header {
   padding: 30px 0;
-  background-color: rebeccapurple;
+  background-color: #0d2149;
   z-index: 100; }
 
 h1 {
   text-align: center;
-  color: #d8aad8; }
+  color: #027bce; }
 
 .hero {
   height: 400px;
@@ -76,20 +76,20 @@ main {
     text-align: justify;
     margin-bottom: 10px; }
   main a {
-    color: black; }
+    color: #0a0908; }
     main a:hover {
-      color: #ddd4dd;
+      color: #46494c;
       text-decoration: none; }
 
 footer {
-  background-color: rebeccapurple;
+  background-color: #0d2149;
   padding-top: 30px;
   padding-bottom: 30px; }
   footer .container {
     display: flex;
     justify-content: center; }
   footer a {
-    color: #d8aad8;
+    color: #027bce;
     display: inline-flex;
     flex-direction: column;
     align-items: center; }
@@ -98,8 +98,8 @@ footer {
     footer a p {
       margin: 0; }
     footer a:hover {
-      color: #ddd4dd;
+      color: #46494c;
       text-decoration: none; }
 
 body {
-  background-color: #dab2e8; }
+  background-color: #027bce; }
