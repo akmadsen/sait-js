@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,68 +8,81 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/styles.css">
-    
+
     <title>CPNT 262 - Quiz - Day 5</title>
 </head>
+
 <body>
     <h1>One Strange Quiz</h1>
 
     <form action="" id="quiz" name="quiz">
-        
+
         <div id="question-1" class="question">
             <h2>Question 1</h2>
-            <label for="pluto">Is Pluto a planet?</label>
-            <select name="pluto" id="pluto" required>
-                <option value="" selected>&lt;None Selected&gt;</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
-                <option value="undecided">It changes on the day.</option>
-            </select>
+            <fieldset>
+                <legend>Is Pluto a planet?</legend>
+                <label for="pluto">Answer:</label>
+                <select name="pluto" id="pluto" required>
+                    <option value="" selected>&lt;None Selected&gt;</option>
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                    <option value="undecided">It depends on the day.</option>
+                </select>
+            </fieldset>
         </div>
 
         <div id="question-2" class="question">
             <h2>Question 2</h2>
-            <!-- Shouldn't use label, should use fieldset -->
-            <label for="platypus">A platypus is a mammal.</label>
-            <input type="radio" id="platypus-true" name="platypus" value="true" required>
-            <label for="platypus-true">True</label>
-            <input type="radio" id="platypus-false" name="platypus" value="false">
-            <label for="platypus-false">False</label>
+            <fieldset>
+                <legend>A platypus is a mammal. (True/False)</legend>
+                <input type="radio" id="platypus-true" name="platypus" value="true" required>
+                <label for="platypus-true">True</label>
+                <input type="radio" id="platypus-false" name="platypus" value="false">
+                <label for="platypus-false">False</label>
+            </fieldset>
         </div>
 
         <div id="question-3" class="question">
             <h2>Question 3</h2>
-            <label for="hyena">A hyena is a type of: </label>
-            <input type="radio" id="hyena-canine" name="hyena" value="canine" required>
-            <label for="hyena-canine">Canine</label>
-            <input type="radio" id="hyena-feline" name="hyena" value="feline">
-            <label for="hyena-feline">Feline</label>
-            <input type="radio" id="hyena-other" name="hyena" value="other">
-            <label for="hyena-other">Other</label>
+            <fieldset>
+                <legend>A hyena is a type of:</legend>
+                <input type="radio" id="hyena-canine" name="hyena" value="canine" required>
+                <label for="hyena-canine">Canine</label>
+                <input type="radio" id="hyena-feline" name="hyena" value="feline">
+                <label for="hyena-feline">Feline</label>
+                <input type="radio" id="hyena-other" name="hyena" value="other">
+                <label for="hyena-other">Other</label>
+            </fieldset>
         </div>
 
         <div id="question-4" class="question">
             <h2>Question 4</h2>
-            <label for="stegosaurus">How do you spell "Stegosaurus"?</label>
-            <input type="text" id="stegosaurus" name="stegosaurus" required>
+
+            <fieldset>
+                <legend>How do you spell "Stegosaurus"?</legend>
+                <label for="stegosaurus">Answer:</label>
+                <input type="text" id="stegosaurus" name="stegosaurus" required>
+            </fieldset>
         </div>
 
         <div id="question-5" class="question">
             <h2>Question 5</h2>
-            <!-- Shouldn't use label, should use fieldset. -->
-            <label for="sport">What is the national sport of Canada?</label>
-            
-            <input type="checkbox" name="rugby" id="rugby" value="rugby">
-            <label for="rugby">Rugby</label>
 
-            <input type="checkbox" name="hockey" id="hockey" value="hockey">
-            <label for="hockey">Hockey</label>
-
-            <input type="checkbox" name="football" id="football" value="football">
-            <label for="football">Football</label>
-
-            <input type="checkbox" name="lacrosse" id="lacrosse" value="lacrosse">
-            <label for="lacrosse">Lacrosse</label>
+            <fieldset>
+                <legend>What is the national sport of Canada?</legend>
+                
+                <input type="checkbox" name="rugby" id="rugby" value="rugby">
+                <label for="rugby">Rugby</label>
+                
+                <input type="checkbox" name="hockey" id="hockey" value="hockey">
+                <label for="hockey">Hockey</label>
+                
+                <input type="checkbox" name="football" id="football" value="football">
+                <label for="football">Football</label>
+                
+                <input type="checkbox" name="lacrosse" id="lacrosse" value="lacrosse">
+                <label for="lacrosse">Lacrosse</label>
+            </fieldset>
         </div>
 
         <input type="submit" id='submit-button'>
@@ -77,4 +91,5 @@
     <!-- Custom JS -->
     <script src="./js/app.js"></script>
 </body>
+
 </html>
