@@ -1,7 +1,6 @@
 // Experiments in grabbing the actual form 
 
 let testForm = document.getElementById('testFormID'); 
-testForm.style.backgroundColor = 'red'; 
 
 console.log(testForm); 
 console.log(document.testForm); 
@@ -54,14 +53,14 @@ assessCheckbox();
 
 // Experiments with Submit Interception 
 
-let submitButton = document.testForm.submit; 
+// Disabled for now - Interferes with Required
+// let submitButton = document.testForm.submit; 
 
-function alertName(name) { 
-    alert("Hello, " + (name ? name : "stranger")); 
-}
+// function alertName(name) { 
+//     alert("Hello, " + (name ? name : "stranger")); 
+// }
 
-submitButton.addEventListener("click", function(event) { 
-    event.preventDefault(); 
-    alertName(name.value); 
-}); 
-
+// submitButton.addEventListener("click", function(event) { 
+//     event.preventDefault(); 
+//     alertName(name.value); 
+// }); 
