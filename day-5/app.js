@@ -50,3 +50,18 @@ function assessCheckbox() {
 }
 
 assessCheckbox(); 
+
+
+// Experiments with Submit Interception 
+
+let submitButton = document.testForm.submit; 
+
+function alertName(name) { 
+    alert("Hello, " + (name ? name : "stranger")); 
+}
+
+submitButton.addEventListener("click", function(event) { 
+    event.preventDefault(); 
+    alertName(name.value); 
+}); 
+
