@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles.css">
+
+    <title>CPNT 262 - Day 5 - Forms</title>
+</head>
+<body>
+    
+    <form action="#" name="testForm" id="testFormID">
+
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name">
+        <br>
+
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email" pattern=".+@sait.ca"
+            size="30" title="Must be a sait.ca email address" required>
+        <br>
+
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password">
+        <br>
+
+        <label for="i_like">Would you like a banana or cherry?: </label>
+        <input type="text" name="i_like" id="i_like" pattern="banana|cherry" minlength=6  maxlength=6 required>
+        <br>
+
+        <label for="amount">How many would you like?: </label>
+        <input type="number" name="amount" id="amount" min=1 max=10 required>
+        <br>
+
+        <fieldset>
+            <legend>Choose an Online Game</legend>
+            <input type="radio" name="best-online-game" id="overwatch" value="overwatch"><label for="overwatch">Overwatch</label>
+            <input type="radio" name="best-online-game" id="dota" value="dota"><label for="dota">DOTA</label>
+            <input type="radio" name="best-online-game" id="hots" value="hots"><label for="hots">HotS</label>
+            <input type="radio" name="best-online-game" id="wow" value="wow"><label for="dota">WoW</label>
+        </fieldset>
+
+        <fieldset>
+            <legend>Make a Monster</legend>
+            <input type="checkbox" name="monster" id="scales" value="scales" checked><label for="scales">Scales</label>
+            <input type="checkbox" name="monster" id="horns" value="horns"><label for="horns">Horns</label>
+            <input type="checkbox" name="monster" id="claws" value="claws"><label for="claws">Claws</label>
+        </fieldset>
+
+        <input type="submit" name="submit">
+        
+    </form>
+
+    <!-- Custom JS -->
+    <script src="./app.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Stylings -->
+    <link rel="stylesheet" href="styles.css">
+
+    <title>CPNT 262 - Questionnaire Example</title>
+</head>
+<body>
+
+    <!-- Let's ask Monty Python's Questions Three -->
+    <form action="#">
+
+        <label for="name">What is your name?: </label>
+        <input type="text" name="name" id="name" required>
+        <br>
+        
+        <label for="quest">What is your quest?: </label>
+        <input type="text" name="quest" id="quest" 
+        pattern="To find the Holy Grail" title="We are here to find the Holy Grail, dummy!" required>
+        <br>
+
+        <label for="colour">What is your favourite colour?: </label>
+        <select name="colour" id="colour" required>
+            <option value="red">RED</option>
+            <option value="blue">BLUE</option>
+            <option value="green">GREEN</option>
+        </select>
+        <br>
+
+        <input type="submit" value="submit">
+    </form>
+
+    <!-- Custom JS -->
+    <script src="app.js"></script>
+</body>
+</html>
