@@ -15,6 +15,11 @@
 <body>
     <h1>One Strange Quiz</h1>
 
+    <div id="result" class="result hidden">
+        <p>Congratulations, your grade is:</p>
+        <p>0/0 = 0%</p>
+    </div>
+
     <form action="" id="quiz" name="quiz">
 
         <div id="question-1" class="question">
@@ -71,16 +76,18 @@
             <fieldset>
                 <legend>What is the national sport of Canada?</legend>
                 
-                <input type="checkbox" name="rugby" id="rugby" value="rugby">
+                <div div="q5-error" class="error hidden">Must select at least one checkbox.</div>
+
+                <input type="checkbox" name="sport" id="rugby" value="rugby">
                 <label for="rugby">Rugby</label>
                 
-                <input type="checkbox" name="hockey" id="hockey" value="hockey">
+                <input type="checkbox" name="sport" id="hockey" value="hockey">
                 <label for="hockey">Hockey</label>
                 
-                <input type="checkbox" name="football" id="football" value="football">
+                <input type="checkbox" name="sport" id="football" value="football">
                 <label for="football">Football</label>
                 
-                <input type="checkbox" name="lacrosse" id="lacrosse" value="lacrosse">
+                <input type="checkbox" name="sport" id="lacrosse" value="lacrosse">
                 <label for="lacrosse">Lacrosse</label>
             </fieldset>
         </div>
