@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Validating Forms</title>
+    </head>
+    <body>
+        <form action="" name="form1">
+            Please enter the following details:
+            <p>
+            Name:
+            <input type="text" id="name" name="txtName" />
+            </p>
+            <p>
+            Age:
+            <input type="text" id="txtAge" name="txtAge"/>
+            </p>
+            <p>
+            <input type="submit" id="submitBtn" value="Submit" name="btnCheckForm">
+            </p>
+            <p id="errorName" style="display:none;">Please enter your name.</p>
+            <p id="errorAge" style="display:none;">Please enter your age.</p>
+        </form>
+    </body>
+    <script>
+    var submitButton = document.getElementById('submitBtn');
+    var errorName = document.getElementById('errorName');
+    var errorAge = document.getElementById('errorAge');
+			
+    submitButton.addEventListener("click", function(event) {
+        errorName.style.display = "none";
+        errorAge.style.display = "none";
+        var name = document.form1.name.value;
+        var age = document.form1.txtAge.value;
+
+        if (!name) {
+            event.preventDefault();
+            errorName.style.display = "block";
+        }
+
+        if (!age) {
+            event.preventDefault();
+            errorAge.style.display = "block";
+        }
+    })
+    </script>
+</html>
