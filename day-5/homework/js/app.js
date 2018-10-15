@@ -14,13 +14,11 @@ const Q3_QUESTION = document.quiz[Q3_ID];
 const Q4_QUESTION = document.quiz[Q4_ID]; 
 const Q5_QUESTION = document.quiz[Q5_ID]; 
 
-const SUBMIT_BUTTON = document.getElementById('submit-button'); 
+const Q5_ERROR = document.getElementById('q5-error'); 
+const RESULT_CARD = document.getElementById('result'); 
+const MARK_DISPLAY = document.getElementById('mark-display'); 
 
-console.log(Q1_QUESTION); 
-console.log(Q2_QUESTION); 
-console.log(Q3_QUESTION); 
-console.log(Q4_QUESTION); 
-console.log(Q5_QUESTION); 
+const SUBMIT_BUTTON = document.getElementById('submit-button'); 
 
 
 // Function Definitions 
@@ -34,13 +32,67 @@ function checkCheckboxValid() {
     return false; 
 }
 
+function showCheckboxError() { 
+    if(Q5_ERROR.classList.contains("hidden")){
+        Q5_ERROR.classList.remove("hidden"); 
+    }
+}
+
+function hideCheckboxError() { 
+    if(!Q5_ERROR.classList.contains("hidden")) { 
+        Q5_ERROR.classList.add("hidden"); 
+    }
+}
+
+function evaluateQ1() { 
+    return Q1_QUESTION.value === "no"; 
+}
+
+function evaluateQ2() { 
+    return Q2_QUESTION.value === "true"; 
+}
+
+function evaluateQ3() { 
+    return Q3_QUESTION.value === "other";
+}
+
+function evaluateQ4() { 
+    return Q4_QUESTION.value.toLowerCase().trim() === "stegosaurus";
+}
+
+function evaluateQ5() { 
+    let result = true; 
+
+    result = result && Q5_QUESTION[0].checked === false; 
+    result = result && Q5_QUESTION[1].checked === true; 
+    result = result && Q5_QUESTION[2].checked === false; 
+    result = result && Q5_QUESTION[3].checked === true; 
+
+    return result;
+}
+
 function evaluateQuiz() { 
-    console.log("TODO: Evaluate the Quiz"); 
-    return []; 
+    return [
+        evaluateQ1(), 
+        evaluateQ2(), 
+        evaluateQ3(), 
+        evaluateQ4(), 
+        evaluateQ5()
+    ]; 
 }
 
 function showGrade(testResults) { 
-    console.log("TODO: Show the Grade"); 
+    let correct = testResults.filter(result => result === true).length; 
+    let total = testResults.length; 
+    let percent = Math.round(correct / total * 100); 
+
+    console.log(correct); 
+    console.log(total); 
+    console.log(percent); 
+
+    MARK_DISPLAY.innerText = correct + " / " + total + " = " + percent + "%"; 
+
+    RESULT_CARD.classList.remove("hidden"); 
 }
 
 // Form Submit Action 
@@ -49,10 +101,14 @@ SUBMIT_BUTTON.addEventListener('click', function(event) {
     QUIZ.checkValidity(); 
     let isValid = QUIZ.reportValidity(); 
     let isCheckboxesValid = checkCheckboxValid(); 
-z
-    console.log("CHECKBOX VALID: " + isCheckboxesValid); 
 
     event.preventDefault(); 
+
+    if (!isCheckboxesValid) { 
+        showCheckboxError(); 
+    } else {
+        hideCheckboxError(); 
+    }
 
     if (isValid && isCheckboxesValid) { 
         let testResults = evaluateQuiz(); 
