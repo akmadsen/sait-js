@@ -8,6 +8,10 @@ main {
         font-family: $header-font; 
     }
 
+    h3 { 
+        margin-top: $standard-margin; 
+    }
+
     p { 
         text-align: justify; 
         margin-bottom: $paragraph-spacing; 

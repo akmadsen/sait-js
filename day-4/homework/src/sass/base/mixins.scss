@@ -1,0 +1,7 @@
+@mixin generate-bg-image($img-url, $darkness) { 
+    background: linear-gradient(rgba(0,0,0,$darkness), rgba(0,0,0,$darkness)), 
+        url($img-url);
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed;  
+}

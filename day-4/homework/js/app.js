@@ -70,9 +70,17 @@ const CENTER_POS_CLASS = "quote-card-center";
 const LEFT_POS_CLASS = "quote-card-left"; 
 const RIGHT_POS_CLASS = "quote-card-right"; 
 
+const GIBSON_BG_CLASS = "gibson-bg"; 
+const LAOZI_BG_CLASS = "laozi-bg"; 
+const ADAMS_BG_CLASS = "adams-bg"; 
+
 const CARD_CLASS = "quote-card"; 
 const QUOTE_CONTAINER_ID = "quote-container"; 
 
+
+const GIBSON = "William Gibson"; 
+const LAOZI = "Laozi"; 
+const ADAMS = "Douglas Adams"; 
 
 // Components to work with 
 const BODY = document.getElementsByTagName('body')[0]; 
@@ -82,10 +90,14 @@ const NEXT_BUTTON = document.getElementById('next-button');
 const TWITTER_BUTTON = document.getElementById('twitter-button'); 
 
 let quoteCenter, quoteLeft, quoteRight; 
+let currentAuthor = ""; 
 let timerID; 
+
 
 let currentIndex = 0;
 let isAnimating = false; 
+
+
 
 
 // Function Definitions
@@ -186,6 +198,57 @@ function shiftRight() {
     quoteCenter.classList.add(CENTER_POS_CLASS); 
 }
 
+
+function updateBackground(author) { 
+    
+    
+    // If there's no work to be done, do nothing 
+    if (author === currentAuthor) { 
+        return; 
+    }
+
+    if (author === GIBSON) {
+
+        if (QUOTE_CONTAINER.classList.contains(LAOZI_BG_CLASS)) { 
+            QUOTE_CONTAINER.classList.remove(LAOZI_BG_CLASS); 
+        } 
+
+        if (QUOTE_CONTAINER.classList.contains(ADAMS_BG_CLASS)) { 
+            QUOTE_CONTAINER.classList.remove(ADAMS_BG_CLASS); 
+        }
+
+        QUOTE_CONTAINER.classList.add(GIBSON_BG_CLASS); 
+    } 
+
+    if (author === LAOZI) {
+
+        if (QUOTE_CONTAINER.classList.contains(GIBSON_BG_CLASS)) { 
+            QUOTE_CONTAINER.classList.remove(GIBSON_BG_CLASS); 
+        } 
+
+        if (QUOTE_CONTAINER.classList.contains(ADAMS_BG_CLASS)) { 
+            QUOTE_CONTAINER.classList.remove(ADAMS_BG_CLASS); 
+        }
+
+        QUOTE_CONTAINER.classList.add(LAOZI_BG_CLASS); 
+    } 
+
+    if (author === ADAMS) {
+
+        if (QUOTE_CONTAINER.classList.contains(GIBSON_BG_CLASS)) { 
+            QUOTE_CONTAINER.classList.remove(GIBSON_BG_CLASS); 
+        } 
+
+        if (QUOTE_CONTAINER.classList.contains(LAOZI_BG_CLASS)) { 
+            QUOTE_CONTAINER.classList.remove(LAOZI_BG_CLASS); 
+        }
+
+        QUOTE_CONTAINER.classList.add(ADAMS_BG_CLASS); 
+    } 
+
+    currentAuthor = author; 
+}
+
 // Direction should be 1 or -1
 function updateQuote(direction) {
 
@@ -204,6 +267,8 @@ function updateQuote(direction) {
     } else { 
         shiftLeft(); 
     }
+
+    updateBackground(quotes[currentIndex].author); 
 }
 
 function resetTimer() {
@@ -246,11 +311,13 @@ function initialize() {
     quoteCenter = makeQuoteCard(0, CENTER_POS_CLASS); 
     quoteLeft = makeQuoteCard(quotes.length - 1, LEFT_POS_CLASS); 
     quoteRight = makeQuoteCard(1, RIGHT_POS_CLASS); 
-    
+
     QUOTE_CONTAINER.appendChild(quoteCenter); 
     QUOTE_CONTAINER.appendChild(quoteLeft); 
     QUOTE_CONTAINER.appendChild(quoteRight); 
     
+    updateBackground(quotes[currentIndex].author); 
+
     timerID = setInterval(updateQuote, TIME_DELAY);
 }
 
