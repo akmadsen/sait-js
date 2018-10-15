@@ -64,7 +64,7 @@ let quotes = [{
 
 
 // Defined variables and constants
-const TIME_DELAY = 5000; // End Result 30 Seconds 
+const TIME_DELAY = 30000; // End Result 30 Seconds 
 
 const CENTER_POS_CLASS = "quote-card-center"; 
 const LEFT_POS_CLASS = "quote-card-left"; 
