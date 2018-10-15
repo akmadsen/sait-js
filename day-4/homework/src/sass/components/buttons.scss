@@ -1,0 +1,62 @@
+button {
+    z-index: 20; 
+}
+
+%switch-button { 
+    background-color: transparent;
+    color: $arrow-color;
+    
+    padding: 0; 
+    border: none; 
+    border-radius: 64px;  
+
+    position: absolute;
+    top: calc(50% - 24px); 
+    transition: $fast-transition; 
+
+    &:hover { 
+        color: $arrow-hover-color; 
+        transform: scale(1.1); 
+    } 
+
+    &:focus { 
+        // Need a good "Focus" solution for other sites
+        outline: none; 
+    }
+}
+
+#prev-button {
+    @extend %switch-button; 
+    left: $standard-margin / 2;
+}
+
+#next-button {
+    @extend %switch-button; 
+    right: $standard-margin / 2;
+}
+
+#twitter-button {
+    background-color: #1da1f2; 
+    color: white; 
+
+    position: absolute; 
+    left: calc(50% - 50px); 
+    bottom: 10px;
+     
+    width: 100px; 
+    height: 42px;
+    
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center; 
+
+    font-family: $body-font; 
+
+    border: none; 
+
+    border-radius: 10px; 
+
+    &:focus { 
+        outline: none; 
+    }
+}

@@ -1,0 +1,23 @@
+#quote-container {
+    height: 100%;
+
+    background-color: $primary-color; 
+
+    padding: 0; 
+    position: relative;
+    overflow-x: hidden; 
+
+    transition: $transition-time; 
+}
+
+.gibson-bg { 
+    @include generate-bg-image($gibson-bg-url, 0.5); 
+}
+
+.laozi-bg { 
+    @include generate-bg-image($laozi-bg-url, 0.5); 
+}
+
+.adams-bg { 
+    @include generate-bg-image($adams-bg-url, 0.75); 
+}
