@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Example</title>
+</head>
+<body>
+    <form action="" name="form1">
+        Please enter the following details: 
+
+        <p>
+            Name: <input type="text" name="txtName" id="txtName">
+        </p>
+        <p>
+            Age: <input type="text" name="txtAge" id="txtAge">
+        </p>
+        <p>
+            <input type="submit" id="submitBtn" value="Submit" name="submit">
+        </p>
+
+        <!-- Error Messages -->
+        <p id="errorName" style="display:none;">Please enter your name.</p>
+        <p id="errorAge" style="display:none;">Please enter your age.</p>
+        <p id="errorYoung" style="display:none;">You are too young for this website.</p>
+        <p id="errorAgeInvalid" style="display:none;">Please enter age as a number.</p>
+    </form>
+
+    <script src="app.js"></script>
+</body>
+</html>
