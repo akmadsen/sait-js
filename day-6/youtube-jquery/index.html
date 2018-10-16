@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-   <title>jQuery + Youtube</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <!-- In this exercise, you'll turn an unordered list of link titles into a linked list of thumbnails with jQuery, instead of native JavaScript. 
+<head>
+  <meta charset="utf-8">
+  <title>jQuery + Youtube</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  
+  <link rel="stylesheet" href="css/styles.css">
+
+  <!-- In this exercise, you'll turn an unordered list of link titles into a linked list of thumbnails with jQuery, instead of native JavaScript. 
 
     First, download the jQuery library from jquery.com and save it into the same directory as your exercise files. Then, add a <script> tag to the page which loads in the jQuery library you just downloaded.
     
@@ -13,15 +17,16 @@
 
     Make sure that you use your browser developer tools to make debugging easier while working on this. Check for errors, and use console.log() to figure out how far your code makes it, and what the values of your variables are along the way.
     -->
-  </head>
-  <body>
-    <div class="container">
+</head>
+
+<body>
+  <div class="container">
     <div class="row">
       <div class="span12">
         <h1 class="page-header">Best Videos Ever ❤</h1>
       </div>
     </div>
- 
+
     <div class="row">
       <div class="span3">
         <ul>
@@ -29,13 +34,31 @@
           <li><a href="https://www.youtube.com/watch?v=epUk3T2Kfno">Otters Holding Hands</a></li>
           <li><a href="http://www.youtube.com/watch?v=iJ4T9CQA0UM">Guy on a Buffalo</a></li>
         </ul>
-       </div>
-     </div>
+      </div>
     </div>
-    <script src="js/youtube.js"></script>
-    <!-- include jQuery here -->
-    <script>
-    // Your code here
-    </script>
-  </body>
+  </div>
+  <!-- include jQuery here -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+  <script src="js/youtube.js"></script>
+  <script>
+    // Backup Check
+    window.jQuery || document.write("<script src=\"js\/jquery.js\"><\/script>");
+
+    let links = $('a');
+
+    links.each(function () {
+      let link = $(this);
+      let vidUrl = link.attr('href');
+      let imgUrl = youtube.generateThumbnailUrl(vidUrl);
+
+      let img = $('<img \/>');
+      img.attr('src', imgUrl);
+      console.log(img);
+      link.append(img);
+    });
+  </script>
+</body>
+
 </html>
