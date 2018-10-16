@@ -53,9 +53,7 @@
       let vidUrl = link.attr('href');
       let imgUrl = youtube.generateThumbnailUrl(vidUrl);
 
-      let img = $('<img \/>');
-      img.attr('src', imgUrl);
-      console.log(img);
+      let img = $('<img src="' + imgUrl + '">');
       link.append(img);
     });
   </script>
