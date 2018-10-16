@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <style>
+        .alert { 
+            color: red; 
+        }
+    </style>
+
+    <title>CPNT 262 - jQuery Effects</title>
+</head>
+<body>
+
+    <p id="error">This is an error.</p>
+
+    <!-- jQuery Code -->
+    <script src="js/jquery.js"></script>
+    <script>
+        // $('#error').toggle(1000); // Toggle (slowly)
+        // $('#error').hide(); // Hides when page loads
+        
+        // From Hidden Animations
+        $('#error').hide(); 
+        // $("#error").fadeIn(1000); 
+        $('#error').show(5000, function() {
+            $(this).addClass('alert'); 
+        }); 
+    </script>
+</body>
+</html>
