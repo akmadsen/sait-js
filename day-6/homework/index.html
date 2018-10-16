@@ -32,39 +32,50 @@
     </div>
 
     <main>
-        <form action="#" id="toggles-form">
+        <div class="container">
 
-            <fieldset id="quantity-set">
-                <legend>Adjust Number of Tiles</legend>
-                <button id='less-button'>-</button>
-                <input type="text" value="5">
-                <button id='more-button'>+</button>
-            </fieldset>
+            <form action="#" id="toggles-form">
+                
+                <fieldset id="quantity-set">
+                    <legend>Adjust Number of Tiles</legend>
+                    <button id='less-button'>-</button>
+                    <input type="text" value="5">
+                    <button id='more-button'>+</button>
+                </fieldset>
+                
+                <fieldset id="hues-set">
+                    <legend>Choose Hue</legend>
+                    <select name="hue" id="hue">
+                        <option value="" selected>Random</option>
+                        <option value="red">Red</option>
+                        <option value="blue">Blue</option>
+                        <option value="green">Green</option>
+                        <option value="yellow">Yellow</option>
+                        <option value="orange">Orange</option>
+                        <option value="purple">Purple</option>
+                        <option value="grey">Grey</option>
+                    </select>
+                </fieldset>
+                
+                <fieldset id="luminosity-set">
+                    <legend>Choose Luminosity</legend>
+                    <label for="light"><input type="radio" name="luminosity" value="light" id="light">Light</label>
+                    <label for="dark"><input type="radio" name="luminosity" value="dark" id="dark">Dark</label>
+                    <label for="random"><input type="radio" name="luminosity" value="random" id="random" checked>Random</label>
+                </fieldset>
+                
+                <input type="submit" value="Generate Palette">
 
-            <fieldset id="hues-set">
-                <legend>Choose Hue</legend>
-                <select name="hue" id="hue">
-                    <option value="" selected>Random</option>
-                    <option value="red">Red</option>
-                    <option value="blue">Blue</option>
-                    <option value="green">Green</option>
-                    <option value="yellow">Yellow</option>
-                    <option value="orange">Orange</option>
-                    <option value="purple">Purple</option>
-                    <option value="grey">Grey</option>
-                </select>
-            </fieldset>
+            </form>
 
-            <fieldset id="luminosity-set">
-                <legend>Choose Luminosity</legend>
-                <label for="light"><input type="radio" name="luminosity" value="light" id="light">Light</label>
-                <label for="dark"><input type="radio" name="luminosity" value="dark" id="dark">Dark</label>
-                <label for="random"><input type="radio" name="luminosity" value="random" id="random" checked>Random</label>
-            </fieldset>
-
-            <input type="submit" value="Generate Palette">
-        </form>
+        </div>
     </main>
+
+    <footer>
+        <div class="container">
+            <a href="https://www.github.com/akmadsen/sait-js">Alex Madsen</a>
+        </div>
+    </footer>
 </body>
 
 </html>
@@ -72,8 +83,3 @@
 <!-- Clipboard.js -->
 <!-- <script src="dist/clipboard.min.js"></script> -->
 
-<!-- jQuery 3.3.1 -->
-<!-- <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script> -->
