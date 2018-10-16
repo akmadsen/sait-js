@@ -7,7 +7,6 @@ $(document).ready(function() {
 
     // Selecting 
     let links = $('a'); 
-    console.log(links);
     
     // Changing CSS
     let google = $('#google a'); 
@@ -38,5 +37,19 @@ $(document).ready(function() {
             "text-decoration": "none" 
         }); 
     }); 
+
+    // Events with jQuery 
+    $('#learn-button').on('click', function(event) {
+        console.log(event); 
+        console.log(event.which); 
+        console.log(event.target); 
+        console.log('clicked!'); 
+    });
+
+    $('body').on('keypress', function(event) {
+        console.log(event); // Event Obj
+        console.log(event.which); // Which value for event 
+        console.log(event.target); // element clicked    
+    });
 
 }); 
