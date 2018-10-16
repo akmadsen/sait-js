@@ -17,18 +17,48 @@
 
     <p id="error">This is an error.</p>
 
+    <button id="toggle-button">Toggle</button>
+    <button id="hide-button">Hide</button>
+    <button id="show-button">Show</button>
+    <button id="fade-in-button">FadeIn</button>
+    <button id="fade-out-button">FadeOut</button>
+
     <!-- jQuery Code -->
     <script src="js/jquery.js"></script>
     <script>
         // $('#error').toggle(1000); // Toggle (slowly)
         // $('#error').hide(); // Hides when page loads
         
-        // From Hidden Animations
-        $('#error').hide(); 
-        // $("#error").fadeIn(1000); 
-        $('#error').show(5000, function() {
-            $(this).addClass('alert'); 
+        $('#toggle-button').click(function(event) {
+            $('#error').toggle(1000); 
         }); 
+
+        $('#hide-button').click(function(event) {
+            $('#error').hide(); 
+        }); 
+
+        $('#show-button').click(function(event) {
+            $('#error').show(1000, function(event) {
+                $(this).addClass('alert'); 
+            }); 
+        }); 
+
+        $('#fade-in-button').click(function(event) {
+            $('#error').fadeIn(1000); 
+        });
+
+        $('#fade-out-button').click(function(event) {
+            $('#error').fadeOut(1000); 
+        });
+
+        // // From Hidden Animations
+        // $('#error').hide(); 
+        // // $("#error").fadeIn(1000); 
+        // $('#error').show(5000, function() {
+        //     $(this).addClass('alert'); 
+        // });
+
+
     </script>
 </body>
 </html>
