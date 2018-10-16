@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./css/styles.css">
 
@@ -13,87 +17,105 @@
 </head>
 
 <body>
-    <h1>One Strange Quiz</h1>
 
-    <div id="result" class="result hidden">
-        <p>Congratulations, your grade is:</p>
-        <p id="mark-display">0/0 = 0%</p>
-    </div>
-
-    <form action="" id="quiz" name="quiz">
-
-        <div id="question-1" class="question">
-            <h2>Question 1</h2>
-            <fieldset>
-                <legend>Is Pluto a planet?</legend>
-                <label for="pluto">Answer:</label>
-                <select name="pluto" id="pluto" required>
-                    <option value="" selected>&lt;None Selected&gt;</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="undecided">It depends on the day.</option>
-                </select>
-            </fieldset>
+    <header>
+        <div class="container">
+            <h1>One Strange Quiz</h1>
         </div>
+    </header>
 
-        <div id="question-2" class="question">
-            <h2>Question 2</h2>
-            <fieldset>
-                <legend>A platypus is a mammal. (True/False)</legend>
-                <input type="radio" id="platypus-true" name="platypus" value="true" required>
-                <label for="platypus-true">True</label>
-                <input type="radio" id="platypus-false" name="platypus" value="false">
-                <label for="platypus-false">False</label>
-            </fieldset>
+    <main>
+        <div class="container">
+
+            <div id="result" class="result hidden">
+                <p>Congratulations, your grade is:</p>
+                <p id="mark-display">0/0 = 0%</p>
+            </div>
+
+            <form action="" id="quiz" name="quiz">
+
+                <div id="question-1" class="question">
+                    <h2>Question 1</h2>
+                    <fieldset>
+                        <legend>Is Pluto a planet?</legend>
+                        <label for="pluto">Answer:</label>
+                        <select name="pluto" id="pluto" required>
+                            <option value="" selected>&lt;None Selected&gt;</option>
+                            <option value="yes">Yes</option>
+                            <option value="no">No</option>
+                            <option value="undecided">It depends on the day.</option>
+                        </select>
+                    </fieldset>
+                </div>
+
+                <div id="question-2" class="question">
+                    <h2>Question 2</h2>
+                    <fieldset>
+                        <legend>A platypus is a mammal. (True/False)</legend>
+                        <input type="radio" id="platypus-true" name="platypus" value="true" required>
+                        <label for="platypus-true">True</label>
+                        <input type="radio" id="platypus-false" name="platypus" value="false">
+                        <label for="platypus-false">False</label>
+                    </fieldset>
+                </div>
+
+                <div id="question-3" class="question">
+                    <h2>Question 3</h2>
+                    <fieldset>
+                        <legend>A hyena is a type of:</legend>
+                        <input type="radio" id="hyena-canine" name="hyena" value="canine" required>
+                        <label for="hyena-canine">Canine</label>
+                        <input type="radio" id="hyena-feline" name="hyena" value="feline">
+                        <label for="hyena-feline">Feline</label>
+                        <input type="radio" id="hyena-other" name="hyena" value="other">
+                        <label for="hyena-other">Other</label>
+                    </fieldset>
+                </div>
+
+                <div id="question-4" class="question">
+                    <h2>Question 4</h2>
+
+                    <fieldset>
+                        <legend>How do you spell "Stegosaurus"?</legend>
+                        <label for="stegosaurus">Answer:</label>
+                        <input type="text" id="stegosaurus" name="stegosaurus" required>
+                    </fieldset>
+                </div>
+
+                <div id="question-5" class="question">
+                    <h2>Question 5</h2>
+
+                    <fieldset>
+                        <legend>What is/are the national sport(s) of Canada?</legend>
+
+                        <div id="q5-error" class="error hidden">Must select at least one checkbox.</div>
+
+                        <input type="checkbox" name="sport" id="rugby" value="rugby">
+                        <label for="rugby">Rugby</label>
+
+                        <input type="checkbox" name="sport" id="hockey" value="hockey">
+                        <label for="hockey">Hockey</label>
+
+                        <input type="checkbox" name="sport" id="football" value="football">
+                        <label for="football">Football</label>
+
+                        <input type="checkbox" name="sport" id="lacrosse" value="lacrosse">
+                        <label for="lacrosse">Lacrosse</label>
+                    </fieldset>
+                </div>
+
+                <input type="submit" id="submit-button" class="submit-button">
+            </form>
         </div>
+    </main>
 
-        <div id="question-3" class="question">
-            <h2>Question 3</h2>
-            <fieldset>
-                <legend>A hyena is a type of:</legend>
-                <input type="radio" id="hyena-canine" name="hyena" value="canine" required>
-                <label for="hyena-canine">Canine</label>
-                <input type="radio" id="hyena-feline" name="hyena" value="feline">
-                <label for="hyena-feline">Feline</label>
-                <input type="radio" id="hyena-other" name="hyena" value="other">
-                <label for="hyena-other">Other</label>
-            </fieldset>
-        </div>
-
-        <div id="question-4" class="question">
-            <h2>Question 4</h2>
-
-            <fieldset>
-                <legend>How do you spell "Stegosaurus"?</legend>
-                <label for="stegosaurus">Answer:</label>
-                <input type="text" id="stegosaurus" name="stegosaurus" required>
-            </fieldset>
-        </div>
-
-        <div id="question-5" class="question">
-            <h2>Question 5</h2>
-
-            <fieldset>
-                <legend>What is/are the national sport(s) of Canada?</legend>
-                
-                <div id="q5-error" class="error hidden">Must select at least one checkbox.</div>
-
-                <input type="checkbox" name="sport" id="rugby" value="rugby">
-                <label for="rugby">Rugby</label>
-                
-                <input type="checkbox" name="sport" id="hockey" value="hockey">
-                <label for="hockey">Hockey</label>
-                
-                <input type="checkbox" name="sport" id="football" value="football">
-                <label for="football">Football</label>
-                
-                <input type="checkbox" name="sport" id="lacrosse" value="lacrosse">
-                <label for="lacrosse">Lacrosse</label>
-            </fieldset>
-        </div>
-
-        <input type="submit" id='submit-button'>
-    </form>
+    <!-- Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 
     <!-- Custom JS -->
     <script src="./js/app.js"></script>
