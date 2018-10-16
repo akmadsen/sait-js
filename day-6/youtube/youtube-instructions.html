@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Youtube.js</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  </head>
+
+  <body>
+    <div class="container">
+      <h2>Using a Library</h2>
+      <h3>Make a Video Player with the DOM API</h3>
+      <p>In this exercise, you'll be turning the below list of linked titles into a list of linked thumbnails, using JavaScript DOM manipulation and the functions from the youtube.JS library (<a href='youtube-documentation.html'>read documentation</a>).</p>
+
+<pre style="white-space: pre-wrap; border: 1px solid lightgrey; padding: 10px;">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+   &lt;title>Video Watcher&lt;/title&gt;
+   &lt;link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+
+    &lt;div class="container"&gt;
+ 
+    &lt;div class="row"&gt;
+      &lt;div class="span12"&gt;
+        &lt;h2 class="page-header">Best Videos Ever ❤&lt;/h1&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+ 
+    &lt;div class="row"&gt;
+      &lt;div class="span3"&gt;
+        &lt;ul&gt;
+          &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=TddFnTB_7IM">Trip through the 80s&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=epUk3T2Kfno">Otters Holding Hands&lt;/a&gt;&lt;/li&gt;
+          &lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=il2IrgFHfsg">The Ooooh Cat&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+       &lt;/div&gt;
+     &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;script type="text/javascript" src="js/youtube.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+    &lt;/script&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+      <p>Step by Step:
+        <ul>
+          <li>Create an array of every link on the page using document.querySelectorAll(cssSelector)</li>
+          <li>Iterate through the array. In each iteration of the loop: </li>
+            <ul>
+              <li>Find the current href using <a href="https://developer.mozilla.org/en-US/docs/DOM/element.getAttribute">element.getAttribute(name)</a>, and store into a variable</li>
+              <li>Generate a thumbnail URL using <a href='youtube-documentation.html'>youtube.generateThumbnailUrl(videoUrl)</a></li>
+              <li>Create an IMG element using <a href="https://developer.mozilla.org/en-US/docs/DOM/document.createElement">document.createElement(tagName)</a></li>
+              <li>Set the "src" of the IMG element using <a href="https://developer.mozilla.org/en-US/docs/DOM/element.setAttribute">element.setAttribute(name, value)</a></li>
+              <li>Append the IMG to the link using <a href="https://developer.mozilla.org/en-US/docs/DOM/Node.appendChild">element.appendChild(element)</a></li>
+            </ul>
+        </ul>
+      </p>
+
+    </div><!--/container-->
+  </body>
+</html>
