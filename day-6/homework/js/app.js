@@ -19,8 +19,8 @@ const COLOR_TILE_CONTAINER = "#color-tile-container";
 
 // Tracking Variables 
 let count = INITIAL_COUNT; 
-
-
+let currentColors = []; 
+let clipboard = null; 
 
 // Function Definitions 
 function getRandomHue() { 
@@ -68,17 +68,17 @@ function getColourGeneratorObject() {
 }
 
 function applyColourGeneration(colorDefinitions) { 
-    let colors = randomColor(colorDefinitions); 
+    currentColors = randomColor(colorDefinitions); 
 
     $(COLOR_TILE_CONTAINER).empty(); 
 
-    $.each(colors, function(index, value) {
+    $.each(currentColors, function(index, value) {
         // If the value is unspecified, then we don't want to interfere
         if (value === "unspecified") { 
             return; 
         }
 
-        let card = $('<div class=color-tile></div>'); 
+        let card = $('<div class="color-tile" data-clipboard-text="' + currentColors[index] + '"></div>'); 
 
         card.css({
             "background-color": value
@@ -86,6 +86,12 @@ function applyColourGeneration(colorDefinitions) {
 
         $(COLOR_TILE_CONTAINER).append(card); 
     }); 
+
+    if(clipboard) { 
+        clipboard.destroy(); 
+    }
+
+    clipboard = new ClipboardJS('.color-tile'); 
 }
 
 function init() { 
@@ -104,4 +110,3 @@ $('#submit-button').click(function(event) {
 
 $("#more-button").click(incrementCounter); 
 $("#less-button").click(decrementCounter); 
-
