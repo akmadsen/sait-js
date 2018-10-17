@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- Font awesome CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
@@ -35,37 +39,53 @@
         <div class="container">
 
             <form action="#" id="toggles-form">
-                
-                <fieldset id="quantity-set">
-                    <legend>Adjust Number of Tiles</legend>
-                    <button id='less-button'>-</button>
-                    <!-- <input type="text" value="5"> -->
-                    <button id='more-button'>+</button>
-                </fieldset>
-                
-                <fieldset id="hues-set">
-                    <legend>Choose Hue</legend>
-                    <select name="hue" id="hue">
-                        <option value="" selected>Random</option>
-                        <option value="red">Red</option>
-                        <option value="blue">Blue</option>
-                        <option value="green">Green</option>
-                        <option value="yellow">Yellow</option>
-                        <option value="orange">Orange</option>
-                        <option value="purple">Purple</option>
-                        <option value="grey">Grey</option>
-                    </select>
-                </fieldset>
-                
-                <fieldset id="luminosity-set">
-                    <legend>Choose Luminosity</legend>
-                    <label for="light"><input type="radio" name="luminosity" value="light" id="light">Light</label>
-                    <label for="dark"><input type="radio" name="luminosity" value="dark" id="dark">Dark</label>
-                    <label for="random"><input type="radio" name="luminosity" value="random" id="random" checked>Random</label>
-                </fieldset>
-                
-                <input type="submit" value="Generate Palette">
+                <h2>Palette Controls</h2>
+                <hr>
 
+                <div class="row">
+
+                    <fieldset id="quantity-set" class="col-12">
+                        <legend>Adjust Number of Tiles</legend>
+                        <div class="quantity-controls">
+                            <button id='less-button' class="quantity-button">-</button>
+                            <div id="quantity-display">3</div>
+                            <button id='more-button' class="quantity-button">+</button>
+                        </div>
+                    </fieldset>
+
+                    <fieldset id="hues-set" class="col-6">
+                        <legend>Choose Hue</legend>
+                        <div class="hue-controls">
+
+                            <select name="hue" id="hue">
+                                <option value="" selected>Random</option>
+                                <option value="red">Red</option>
+                                <option value="blue">Blue</option>
+                                <option value="green">Green</option>
+                                <option value="yellow">Yellow</option>
+                                <option value="orange">Orange</option>
+                                <option value="purple">Purple</option>
+                                <option value="grey">Grey</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <fieldset id="luminosity-set" class="col-6">
+                        <legend>Choose Luminosity</legend>
+                        <div class="luminosity-controls">
+                            <label for="light"><input type="radio" name="luminosity" value="light" id="light">Light</label>
+                            <label for="dark"><input type="radio" name="luminosity" value="dark" id="dark">Dark</label>
+                            <label for="random"><input type="radio" name="luminosity" value="random" id="random" checked>Random</label>
+                        </div>
+                    </fieldset>
+
+                    <div class="submit-container col-12">
+                        <div class="submit-controls">
+                            <input type="submit" class="submit-button" value="Generate Palette">
+                        </div>
+                    </div>
+
+                </div>
             </form>
 
         </div>
@@ -73,7 +93,7 @@
 
     <footer>
         <div class="container">
-            <a href="https://www.github.com/akmadsen/sait-js">Alex Madsen</a>
+            <a href="https://www.github.com/akmadsen/sait-js"><i class="fab fa-github fa-3x"></i>Alex Madsen</a>
         </div>
     </footer>
 </body>
@@ -82,4 +102,3 @@
 
 <!-- Clipboard.js -->
 <!-- <script src="dist/clipboard.min.js"></script> -->
-
