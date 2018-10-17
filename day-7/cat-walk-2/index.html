@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Cat Walk</title>
-  </head>
-  <body>
 
-    <img id="cat" style="position:absolute; left: 0;" src="img/cat.gif">
+<head>
+  <meta charset="utf-8" />
+  <title>Cat Walk</title>
+</head>
 
-    <script>
-      var walkForwards = true;
+<body>
 
-      function catWalk() {
-        var img = document.getElementById('cat');
-        var currentLeft = parseInt(img.style.left);
+  <img id="cat" style="position:absolute; left: 0;" src="img/cat.gif">
 
-        if (walkForwards && (currentLeft > (window.innerWidth-img.width))) {
-          walkForwards = false;
-        }
+  <script>
+    var walkForwards = true;
 
-        if (!walkForwards && (currentLeft <= 0)) {
-          walkForwards = true;
-        }
+    // Set the current left of cat to localStorage 
+ 
+    // Initialization
+    if (localStorage["current left"]) { 
+      let cat = document.getElementById('cat'); 
+      cat.style.left = localStorage["current left"] + 'px'; 
+    }
 
-        if (walkForwards) {
-          img.style.left = (currentLeft + 10) + 'px';
-        } else {
-          img.style.left = (currentLeft - 10) + 'px';
-        }
+    if(localStorage["walk forwards"]) { 
+      walkForwards = (localStorage["walk forwards"] === "true"); 
+    }
+    
+    function catWalk() {
+      var img = document.getElementById('cat');
+      var currentLeft = parseInt(img.style.left);
+
+      if (walkForwards && (currentLeft > (window.innerWidth - img.width))) {
+        walkForwards = false;
       }
-      
-      setInterval(catWalk, 50);
-    </script>
 
-  </body>
+      if (!walkForwards && (currentLeft <= 0)) {
+        walkForwards = true;
+      }
+
+      if (walkForwards) {
+        img.style.left = (currentLeft + 10) + 'px';
+      } else {
+        img.style.left = (currentLeft - 10) + 'px';
+      }
+
+      localStorage["current left"] = currentLeft;
+      localStorage["walk forwards"] = walkForwards; 
+    }
+
+    setInterval(catWalk, 50);
+  </script>
+
+</body>
+
 </html>
