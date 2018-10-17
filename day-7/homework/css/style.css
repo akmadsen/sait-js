@@ -1,0 +1,52 @@
+header {
+    background-color: rebeccapurple; 
+    color: #ddd; 
+    padding: 10px 0; 
+}
+
+h1 { 
+    text-align: center; 
+}
+
+main { 
+    background-color: #ddd; 
+    min-height: 850px; 
+    padding: 50px 0; 
+}
+
+form { 
+    background-color: #888;
+    padding: 20px;
+}
+
+.form-controls { 
+    display: flex; 
+}
+
+label { 
+    margin-bottom: 0;
+    margin-right: auto;   
+    color: #ddd;  
+}
+
+#lyric-container { 
+    background-color: papayawhip; 
+    white-space: pre-wrap; 
+}
+
+footer { 
+    background: rebeccapurple; 
+    padding: 20px 0; 
+}
+
+.hidden { 
+    display: none; 
+}
+
+.error { 
+    background-color: salmon; 
+    color: red; 
+    border: 2px solid red; 
+
+    margin-bottom: 20px; 
+}

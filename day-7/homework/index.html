@@ -5,30 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>CPNT</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>CPNT 262 - Lyric Search App</title>
 </head>
 
 <body>
     <header>
-        <h1>Lyric Search App</h1>
+        <div class="container">
+            <h1>Lyric Search App</h1>
+        </div>
     </header>
 
     <main>
-        <form action="#">
-            <label for="artist">Artist: <input type="text" name="artist" id="artist"></label>
-            <label for="song">Song: <input type="text" name="song" id="song"></label>
-            <input type="submit" id="submit-button" value="Submit">
-        </form>
-
-        <div id="lyric-container">
-            <h2 id="song-display">Song Title</h2>
-            <span id="artist-display">Song Title</span>
-            <div id="lyrics-display">Lyrics Go Here</div>
+        <div class="container">
+            <form action="#">
+                <div id="error-messages" class="error hidden"></div>
+                <div class="form-controls">
+                    <label for="artist">Artist: <input type="text" name="artist" id="artist" required></label>
+                    <label for="song">Song: <input type="text" name="song" id="song" required></label>
+                    <input type="submit" id="submit-button" value="Submit">
+                </div>
+            </form>
+            
+            <div id="lyric-container" class="hidden">
+                <h2 id="song-display">Song Title</h2>
+                <span id="artist-display">Artist</span>
+                <div id="lyrics-display">Lyrics Go Here</div>
+            </div>
         </div>
     </main>
 
     <footer>
-        <a href="https://github.com/akmadsen">Alex Madsen</a>
+        <div class="container">
+            <a href="https://github.com/akmadsen">Alex Madsen</a>
+        </div>
     </footer>
 
     <script src="js/app.js"></script>
