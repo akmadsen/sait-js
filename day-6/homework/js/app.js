@@ -18,7 +18,7 @@ const QUANTITY_DISPLAY = '#quantity-display';
 
 
 // Tracking Variables 
-let quantity = INITIAL_COUNT; 
+let count = INITIAL_COUNT; 
 
 
 
@@ -38,17 +38,42 @@ function getRandomLuminosity() {
 }
 
 function updateCounterDisplay() { 
-    $(QUANTITY_DISPLAY).text(quantity); 
+    $(QUANTITY_DISPLAY).text(count); 
 }
 
 function incrementCounter() { 
-    quantity = (quantity + 1) > MAX_COUNT ? MAX_COUNT : quantity + 1; 
+    count = (count + 1) > MAX_COUNT ? MAX_COUNT : count + 1; 
     updateCounterDisplay(); 
 }
 
 function decrementCounter() { 
-    quantity = (quantity - 1) < MIN_COUNT ? MIN_COUNT : quantity - 1; 
+    count = (count - 1) < MIN_COUNT ? MIN_COUNT : count - 1; 
     updateCounterDisplay(); 
+}
+
+function getColourGeneratorObject() { 
+    let result = {}; 
+
+    result['count'] = count; // Coun't isn't technically part of the form
+    $.each($('form').serializeArray(), function(index, value) {
+        result[value.name] = value.value; 
+    });  
+
+    // Apply randomness 
+    if (result['hue'] === "") { 
+        result['hue'] = getRandomHue(); 
+    }
+
+    if (result['luminosity'] === "random") { 
+        result['luminosity'] = getRandomLuminosity(); 
+    }
+
+    return result; 
+}
+
+function applyColourGeneration(colorDefinitions) { 
+    console.log(colorDefinitions); 
+    console.log("TODO: Apply Colour Generation object"); 
 }
 
 // Interactivity 
@@ -56,7 +81,9 @@ init();
 
 $('#submit-button').click(function(event) {
     event.preventDefault(); 
-    console.log("BOOP"); 
+
+    let colourDef = getColourGeneratorObject(); 
+    applyColourGeneration(colourDef); 
 }); 
 
 $("#more-button").click(incrementCounter); 
