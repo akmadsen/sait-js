@@ -4,23 +4,31 @@ const FORM = document.forms[0]; // We know there's only one form
 
 const SUBMIT_BUTTON = document.getElementById("submit-button");
 const ERROR_MESSAGE_BOX = document.getElementById("error-messages"); 
-
+const LYRIC_CONTAINER = document.getElementById("lyric-container"); 
+const SONG_DISPLAY = document.getElementById('song-display'); 
+const ARTIST_DISPLAY = document.getElementById('artist-display'); 
+const LYRICS_DISPLAY = document.getElementById('lyrics-display'); 
 // Variables we Care About 
 
 // Function Definitions
 function displayLyrics(artist, songTitle, lyrics) {
-    console.log("TODO: Display Lyrics Nicely"); 
-    let container = document.getElementById('lyric-container');
-    let lyricsElement = document.createElement('div');
+    if (LYRIC_CONTAINER.classList.contains('hidden')) { 
+        LYRIC_CONTAINER.classList.remove('hidden'); 
+    }   
 
-
-    lyricsElement.innerHTML = lyrics;
-    container.innerHTML = ""; // Clearing inner html
-    container.appendChild(lyricsElement);
+    SONG_DISPLAY.textContent = songTitle; 
+    ARTIST_DISPLAY.textContent = artist; 
+    LYRICS_DISPLAY.textContent = lyrics; 
 }
 
 function displayLyricsNotFound() {
-    console.log("TODO: Handle Lyrics Not Found"); 
+    if (LYRIC_CONTAINER.classList.contains('hidden')) { 
+        LYRIC_CONTAINER.classList.remove('hidden'); 
+    }   
+
+    SONG_DISPLAY.textContent = "ERROR: Song not found"; 
+    ARTIST_DISPLAY.textContent = ""; 
+    LYRICS_DISPLAY.textContent = ""; 
 }
 
 function displayErrors(errors) { 
@@ -65,8 +73,10 @@ function fetchLyrics(artist, songTitle) {
         })
         .catch(function (error) {
             console.log("CAUGHT ERROR: " + error); 
-            if (error.toString() === "404") { 
+            if (error.message === "404") { 
                 displayLyricsNotFound(); 
+            } else { 
+                console.log("An Unknown Error Happened!"); 
             }
         });
 }
