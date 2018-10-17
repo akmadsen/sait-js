@@ -24,11 +24,13 @@ let clipboard = null;
 
 // Function Definitions 
 function getRandomHue() { 
+    console.log("RANDOM HUE"); 
     let randomIndex = Math.floor(Math.random() * HUES.length);
     return HUES[randomIndex]; 
 }
 
-function getRandomLuminosity() { 
+function getRandomLuminosity() {
+    console.log("RANDOM LUM");  
     let randomIndex = Math.floor(Math.random() * LUMINOSITIES.length); 
     return LUMINOSITIES[randomIndex]; 
 }
@@ -56,7 +58,7 @@ function getColourGeneratorObject() {
     });  
 
     // Apply randomness 
-    if (result['hue'] === "") { 
+    if (result['hue'] === "random") { 
         result['hue'] = getRandomHue(); 
     }
 
