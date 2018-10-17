@@ -15,7 +15,7 @@ const MAX_COUNT = 10;
 
 // jQuery IDs 
 const QUANTITY_DISPLAY = '#quantity-display'; 
-
+const COLOR_TILE_CONtAINER = "#color-tile-container"; 
 
 // Tracking Variables 
 let count = INITIAL_COUNT; 
@@ -73,7 +73,19 @@ function getColourGeneratorObject() {
 
 function applyColourGeneration(colorDefinitions) { 
     console.log(colorDefinitions); 
-    console.log("TODO: Apply Colour Generation object"); 
+    let colors = randomColor(colorDefinitions); 
+
+    $(COLOR_TILE_CONtAINER).empty(); 
+
+    $.each(colors, function(index, value) {
+        console.log("ITERATING ON COLOR: " + value); 
+        let card = $('<div class=color-tile></div>'); 
+        console.log(card); 
+        card.css({
+            "background-color": value
+        });
+        $(COLOR_TILE_CONtAINER).append(card); 
+    }); 
 }
 
 // Interactivity 
