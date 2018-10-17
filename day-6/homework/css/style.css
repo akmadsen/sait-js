@@ -34,6 +34,7 @@ h1 {
     width: 150px; 
     box-shadow:3px 5px 20px rgba(0,0,0,0.19), 3px 6px 6px rgba(0,0,0,0.23);
     border-radius: 100%;
+    margin:20px; 
 }
 
 main { 
@@ -120,7 +121,7 @@ h2 {
 
 footer { 
     background-color: rebeccapurple; 
-    padding: 10px 0; 
+    padding: 20px 0; 
 }
 
 footer .container { 
