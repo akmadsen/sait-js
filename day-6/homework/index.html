@@ -60,12 +60,13 @@
                             <select name="hue" id="hue">
                                 <option value="" selected>Random</option>
                                 <option value="red">Red</option>
-                                <option value="blue">Blue</option>
-                                <option value="green">Green</option>
-                                <option value="yellow">Yellow</option>
                                 <option value="orange">Orange</option>
+                                <option value="yellow">Yellow</option>
+                                <option value="green">Green</option>
+                                <option value="blue">Blue</option>
                                 <option value="purple">Purple</option>
-                                <option value="grey">Grey</option>
+                                <option value="pink">Pink</option>
+                                <option value="monochrome">Monochrome</option>
                             </select>
                         </div>
                     </fieldset>
@@ -73,6 +74,7 @@
                     <fieldset id="luminosity-set" class="col-6">
                         <legend>Choose Luminosity</legend>
                         <div class="luminosity-controls">
+                            <label for="bright"><input type="radio" name="luminosity" value="bright" id="bright">Bright</label>
                             <label for="light"><input type="radio" name="luminosity" value="light" id="light">Light</label>
                             <label for="dark"><input type="radio" name="luminosity" value="dark" id="dark">Dark</label>
                             <label for="random"><input type="radio" name="luminosity" value="random" id="random" checked>Random</label>
@@ -96,6 +98,15 @@
             <a href="https://www.github.com/akmadsen/sait-js"><i class="fab fa-github fa-3x"></i>Alex Madsen</a>
         </div>
     </footer>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+
+    <!-- randomColor.js -->
+    <script src="./js/randomColor.js"></script>
+
+    <!-- Site Behaviours -->
+    <script src="./js/app.js"></script>
 </body>
 
 </html>
