@@ -61,15 +61,21 @@ function clearErrors() {
 
 function fetchLyrics(artist, songTitle) {
     fetch("https://api.lyrics.ovh/v1/" + artist + "/" + songTitle + "")
-        .then(function (result) {
-            if (!result.ok) {
-                throw Error(result.status);
+        .then(function (response) {
+            if (!response.ok) {
+                throw Error(response.status);
             }
 
-            return result.json();
+            console.log(response)
+            return response.json();
         })
         .then(function (data) {
-            displayLyrics(artist, songTitle, data.lyrics);
+            console.log(data); 
+            if(data.lyrics === "") { 
+                displayLyricsNotFound(); 
+            } else { 
+                displayLyrics(artist, songTitle, data.lyrics);
+            }
         })
         .catch(function (error) {
             console.log("CAUGHT ERROR: " + error); 
