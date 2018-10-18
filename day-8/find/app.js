@@ -18,6 +18,6 @@ const posts = [{
 
 // Find the post with ID 29
 const currentId = 29;
-const currentPost = posts.find(post => post.id === 29); 
+const currentPost = posts.find(post => post.id === currentId); 
 console.log(currentPost.title);
 console.log(currentPost.body);
