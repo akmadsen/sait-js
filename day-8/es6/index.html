@@ -10,6 +10,8 @@
 
 <body>
 
+    <h1>ES6 JavaScript & Scoping</h1>
+    <p>See Console for Work</p>
     <script>
         // Invocation 
         function greetPerson(name) { 
@@ -26,6 +28,19 @@
                 greetPerson(name); 
             }
         })(); 
+
+
+        // SCOPING - let and var 
+        for (var i = 0; i < 10; i++) { 
+            console.log("VAR: " + i); 
+        }
+        console.log("VAR END: " + i); 
+
+        for (let j = 0; j < 10; j++) { 
+            console.log("LET: " + j); 
+        }
+        console.log("LET END: " + j); 
+
     </script>
 </body>
 
