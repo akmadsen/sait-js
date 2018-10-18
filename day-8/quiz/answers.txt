@@ -1,0 +1,30 @@
+Which array helper would be most suitable for each situation? 
+(forEach, every, some, filter, map, find or reduce)
+
+1. You need to check if all elements in an array are integers.
+
+every
+
+2. You have an array of blog posts and need to output each post on the page.
+
+forEach
+
+3. You need to check if an array has at least one element that isn't null.
+
+some
+
+4. You have an array of expenses and need to calculate your total expenses last month.
+
+reduce 
+
+5. You need a new array to store the square root of each item in an existing array.
+
+map
+
+6. You have an array of computers, but only need computers with more than 16GB of RAM.
+
+filter
+
+7. You have an array of blog posts, and need to retrieve one post by its ID.
+
+find
